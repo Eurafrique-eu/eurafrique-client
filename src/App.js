@@ -10,7 +10,6 @@ function App() {
       <div className="main-content">
         <Sidebar />
         <Routes>
-          <Route exact path="/" />
           <Route exact path="/FOCUS" />
           <Route exact path="/AJVI-COJEA" />
           <Route exact path="/POLMAR" />

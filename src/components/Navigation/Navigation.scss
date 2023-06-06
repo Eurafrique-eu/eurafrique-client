@@ -14,18 +14,20 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    max-width: 50%;
-    height: 30%;
+    max-width: 40%;
 
     .tab {
       color: rgb(23, 23, 136);
       border: 1px solid transparent;
-      margin-right: 20px;
+      margin-right: 35px;
+      margin-bottom: 5px;
+      margin-top: 5px;
       font-weight: 600;
       padding: 7px 9px;
       text-decoration: none;
 
-      &:hover {
+      &:hover,
+      &.active {
         color: rgb(228, 63, 63);
         border: 1px solid rgb(228, 63, 63);
       }
@@ -39,10 +41,10 @@
     margin-right: -25px;
     background-color: #ffffff;
     left: 0;
-    transition: transform 0.3s ease-in-out; // Added transition property
+    transition: transform 0.3s ease-in-out;
 
     &.menu-open {
-      transform: scale(0.8); // Adjust the scale value as per your desired effect
+      transform: scale(0.8);
     }
   }
 

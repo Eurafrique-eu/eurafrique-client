@@ -13,6 +13,7 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [anchorEl, setAnchorEl] = useState(null);
+  const [activeTab, setActiveTab] = useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -22,35 +23,71 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
   const renderDesktopNavbar = () => {
     return (
       <Toolbar className="navbar">
-        <Link to="/">
+        <Link to="/FOCUS">
           <img className="logo" src={desktopLogo} alt="Company Logo" />
         </Link>
         <div className="tabs">
-          <Link to="/FOCUS" className="tab">
+          <Link
+            to="/FOCUS"
+            className={`tab ${activeTab === "FOCUS" ? "active" : ""}`}
+            onClick={() => handleTabClick("FOCUS")}
+          >
             FOCUS
           </Link>
-          <Link to="/AJVI-COJEA" className="tab">
+          <Link
+            to="/AJVI-COJEA"
+            className={`tab ${activeTab === "AJVI-COJEA" ? "active" : ""}`}
+            onClick={() => handleTabClick("AJVI-COJEA")}
+          >
             AJVI-COJEA
           </Link>
-          <Link to="/POLMAR" className="tab">
+          <Link
+            to="/POLMAR"
+            className={`tab ${activeTab === "POLMAR" ? "active" : ""}`}
+            onClick={() => handleTabClick("POLMAR")}
+          >
             POLMAR
           </Link>
-          <Link to="/EAGROPOLE" className="tab">
+          <Link
+            to="/EAGROPOLE"
+            className={`tab ${activeTab === "EAGROPOLE" ? "active" : ""}`}
+            onClick={() => handleTabClick("EAGROPOLE")}
+          >
             EAGROPOLE
           </Link>
-          <Link to="/IDEA" className="tab">
+          <Link
+            to="/IDEA"
+            className={`tab ${activeTab === "IDEA" ? "active" : ""}`}
+            onClick={() => handleTabClick("IDEA")}
+          >
             IDEA
           </Link>
-          <Link to="/BENEVOLEA" className="tab">
+          <Link
+            to="/BENEVOLEA"
+            className={`tab ${activeTab === "BENEVOLEA" ? "active" : ""}`}
+            onClick={() => handleTabClick("BENEVOLEA")}
+          >
             BENEVOLEA
           </Link>
-          <Link to="/DIGEA" className="tab">
+          <Link
+            to="/DIGEA"
+            className={`tab ${activeTab === "DIGEA" ? "active" : ""}`}
+            onClick={() => handleTabClick("DIGEA")}
+          >
             DIGEA
           </Link>
-          <Link to="/GM-TV" className="tab">
+          <Link
+            to="/GM-TV"
+            className={`tab ${activeTab === "GM-TV" ? "active" : ""}`}
+            onClick={() => handleTabClick("GM-TV")}
+          >
             GM TV
           </Link>
         </div>
@@ -63,7 +100,7 @@ const Navbar = () => {
     return (
       <>
         <Toolbar className="navbar">
-          <Link to="/">
+          <Link to="/FOCUS">
             <img src={desktopLogo} className="logo" alt="Company Logo" />
           </Link>
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleClick}>
