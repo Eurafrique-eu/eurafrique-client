@@ -4,8 +4,8 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { AppBar, Toolbar, IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import desktopLogo from "../../assets/logo-desktop.png";
-import mobileLogo from "../../assets/logo-mobile.png";
 import blueShape from "../../assets/blue-svg (2).png";
 import "./Navigation.scss";
 
@@ -64,10 +64,14 @@ const Navbar = () => {
       <>
         <Toolbar className="navbar">
           <Link to="/">
-            <img src={mobileLogo} className="logo" alt="Company Logo" />
+            <img src={desktopLogo} className="logo" alt="Company Logo" />
           </Link>
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleClick}>
-            <MenuIcon />
+            {Boolean(anchorEl) ? (
+              <CloseIcon className="menu-icon" />
+            ) : (
+              <MenuIcon className="menu-icon" />
+            )}
           </IconButton>
         </Toolbar>
         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
@@ -117,7 +121,15 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">{isMobile ? renderMobileNavbar() : renderDesktopNavbar()}</AppBar>
+    <AppBar position="static">
+      {isMobile ? (
+        <div className={Boolean(anchorEl) ? "mobile-menu-open" : "mobile-menu-closed"}>
+          {renderMobileNavbar()}
+        </div>
+      ) : (
+        renderDesktopNavbar()
+      )}
+    </AppBar>
   );
 };
 
