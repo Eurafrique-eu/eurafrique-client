@@ -56,11 +56,11 @@ const Navbar = () => {
             POLMAR
           </Link>
           <Link
-            to="/EAGROPOLE"
-            className={`tab ${activeTab === "EAGROPOLE" ? "active" : ""}`}
-            onClick={() => handleTabClick("EAGROPOLE")}
+            to="/AGROPOLEA"
+            className={`tab ${activeTab === "AGROPOLEA" ? "active" : ""}`}
+            onClick={() => handleTabClick("AGROPOLEA")}
           >
-            EAGROPOLE
+            AGROPOLEA
           </Link>
           <Link
             to="/IDEA"
@@ -128,8 +128,8 @@ const Navbar = () => {
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link to="/EAGROPOLE" className="tab">
-              EAGROPOLE
+            <Link to="/AGROPOLEA" className="tab">
+              AGROPOLEA
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
