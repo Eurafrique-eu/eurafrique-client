@@ -14,11 +14,17 @@
   .flap {
     width: 40px;
     height: 100px;
-    background-color: rgb(23, 23, 136);
+    background: linear-gradient(
+      to left,
+      rgb(23, 23, 136) 0%,
+      rgb(23, 23, 136) 50%,
+      transparent 50%,
+      transparent 100%
+    );
     position: absolute;
-    right: -15px;
+    right: -20px;
     top: 40%;
-    transform: translateY(-40%);
+    transform: translateY(-50%);
     border-radius: 60px;
 
     @media (min-width: 481px) {
