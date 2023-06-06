@@ -1,7 +1,7 @@
 .sidebar {
   width: 20%;
   height: 100vh;
-  background-color: grey;
+  background-color: rgb(241, 234, 234);
   position: fixed;
   left: 0;
   z-index: 999;
@@ -40,5 +40,7 @@
   @media (max-width: 480px) {
     width: 100%;
     transform: translateX(-100%);
+    border: 1px solid rgba(23, 23, 136, 0.5);
+    border-top-right-radius: 15px;
   }
 }
