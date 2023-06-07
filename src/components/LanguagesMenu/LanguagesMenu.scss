@@ -1,0 +1,20 @@
+.languages-menu {
+  display: flex;
+  gap: 10px;
+  border: 2px solid rgb(23, 23, 136);
+  width: fit-content;
+  padding: 10px;
+
+  .flag {
+    width: 40px;
+    height: 24px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .flag-button {
+    border: none;
+    padding: 0;
+  }
+}

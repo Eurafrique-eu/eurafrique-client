@@ -38,7 +38,6 @@ const Sidebar = () => {
         ref={flapRef}
       ></div>
       <LanguagesMenu />
-      <h1></h1>
     </div>
   );
 };
