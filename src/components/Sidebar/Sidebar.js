@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Sidebar.scss";
+import LanguagesMenu from "../LanguagesMenu/LanguagesMenu";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +37,8 @@ const Sidebar = () => {
         onTouchEnd={handleTouchEnd}
         ref={flapRef}
       ></div>
+      <LanguagesMenu />
+      <h1></h1>
     </div>
   );
 };

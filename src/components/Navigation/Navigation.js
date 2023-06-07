@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import desktopLogo from "../../assets/logo-desktop.png";
 import blueShape from "../../assets/blue-svg (2).png";
+import { useTranslation } from "react-i18next";
 import "./Navigation.scss";
 
 const Navbar = () => {
@@ -14,6 +15,7 @@ const Navbar = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [anchorEl, setAnchorEl] = useState(null);
   const [activeTab, setActiveTab] = useState("FOCUS");
+  const { t } = useTranslation();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -39,7 +41,7 @@ const Navbar = () => {
             className={`tab ${activeTab === "FOCUS" ? "active" : ""}`}
             onClick={() => handleTabClick("FOCUS")}
           >
-            FOCUS
+            {t("FOCUS")}
           </Link>
           <Link
             to="/AJVI-COJEA"
