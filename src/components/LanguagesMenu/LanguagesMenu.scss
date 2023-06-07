@@ -3,13 +3,17 @@
   gap: 10px;
   border: 2px solid rgb(23, 23, 136);
   width: fit-content;
-  padding: 10px;
+  padding: 5px 5px 3px 5px;
 
   .flag {
     width: 40px;
     height: 24px;
+    border: 1px solid transparent;
     &:hover {
       transform: scale(1.1);
+    }
+    &.active {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     }
   }
 

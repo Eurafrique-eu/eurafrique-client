@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./Sidebar.scss";
 import LanguagesMenu from "../LanguagesMenu/LanguagesMenu";
+import MemberButton from "../memberButton/memberButton";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +39,7 @@ const Sidebar = () => {
         ref={flapRef}
       ></div>
       <LanguagesMenu />
+      <MemberButton />
     </div>
   );
 };

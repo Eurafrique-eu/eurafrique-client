@@ -116,7 +116,7 @@ const Navbar = () => {
         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
           <MenuItem onClick={handleClose}>
             <Link to="/FOCUS" className="tab">
-              FOCUS
+              {t("FOCUS")}
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
