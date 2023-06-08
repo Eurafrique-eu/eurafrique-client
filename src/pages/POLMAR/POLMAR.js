@@ -11,7 +11,7 @@ const POLMAR = () => {
   }, [setTabs]);
 
   return (
-    <div>
+    <div className="page-content">
       <h1>POLMAR Page</h1>
     </div>
   );

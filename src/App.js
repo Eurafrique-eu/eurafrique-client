@@ -59,6 +59,7 @@ function App() {
         <div className="main-content">
           <Sidebar />
           <Routes>
+            <Route exact path="/" element={<Focus />} />
             <Route exact path="/FOCUS" element={<Focus />} />
             <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
             <Route exact path="/POLMAR" element={<POLMAR />} />

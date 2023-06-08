@@ -3,6 +3,7 @@ import "./Sidebar.scss";
 import LanguagesMenu from "../LanguagesMenu/LanguagesMenu";
 import MemberButton from "../memberButton/memberButton";
 import SidebarTabs from "./SidebarTabs/SidebarTabs";
+import LinksBlock from "./LinksBlock/LinksBlock";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,6 +43,7 @@ const Sidebar = () => {
       <LanguagesMenu />
       <MemberButton />
       <SidebarTabs />
+      <LinksBlock />
     </div>
   );
 };

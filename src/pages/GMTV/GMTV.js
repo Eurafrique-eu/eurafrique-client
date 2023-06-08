@@ -11,7 +11,7 @@ const GMTV = () => {
   }, [setTabs]);
 
   return (
-    <div>
+    <div className="page-content">
       <h1>GMTV Page</h1>
     </div>
   );

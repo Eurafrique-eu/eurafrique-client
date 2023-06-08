@@ -11,7 +11,7 @@ const AGROPOLEA = () => {
   }, [setTabs]);
 
   return (
-    <div>
+    <div className="page-content">
       <h1>AGROPOLEA Page</h1>
     </div>
   );

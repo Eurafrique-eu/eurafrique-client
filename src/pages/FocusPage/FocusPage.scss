@@ -1,5 +1,10 @@
-h1 {
-  font-size: 50px;
-  font-weight: 600;
-  color: black;
+@import "../../App.scss";
+
+.focus-page {
+  @include pageBase;
+  h1 {
+    font-size: 50px;
+    font-weight: 600;
+    color: black;
+  }
 }

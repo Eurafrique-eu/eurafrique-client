@@ -11,7 +11,7 @@ const IDEA = () => {
   }, [setTabs]);
 
   return (
-    <div>
+    <div className="page-content">
       <h1>IDEA Page</h1>
     </div>
   );

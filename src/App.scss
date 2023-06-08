@@ -10,3 +10,20 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.main-content {
+  display: flex;
+}
+
+@mixin pageBase {
+  width: 80%;
+  padding: 10px 30px;
+}
+
+@mixin pageContent {
+  display: flex;
+}
+
+.page-content {
+  @include pageContent;
+}

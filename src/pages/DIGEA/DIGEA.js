@@ -11,7 +11,7 @@ const DIGEA = () => {
   }, [setTabs]);
 
   return (
-    <div>
+    <div className="page-content">
       <h1>DIGEA Page</h1>
     </div>
   );

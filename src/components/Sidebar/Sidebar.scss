@@ -1,8 +1,7 @@
 .sidebar {
   width: 20%;
-  height: 100vh;
+  max-height: fit-content;
   background-color: rgb(241, 234, 234);
-  position: fixed;
   left: 0;
   z-index: 999;
   transition: transform 0.3s ease-in-out;
@@ -10,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   padding: 40px 20px;
-
+  overflow-y: auto;
   &.open {
     transform: translateX(-50%);
   }

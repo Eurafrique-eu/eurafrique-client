@@ -21,7 +21,7 @@ const AJVICOJEA = () => {
   }, [setTabs]);
 
   return (
-    <div>
+    <div className="page-content">
       <h1>AJVI-COJEA Page</h1>
     </div>
   );

@@ -11,7 +11,7 @@ const BENEVOLEA = () => {
   }, [setTabs]);
 
   return (
-    <div>
+    <div className="page-content">
       <h1>BENEVOLEA Page</h1>
     </div>
   );
