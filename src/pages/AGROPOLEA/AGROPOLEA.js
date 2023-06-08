@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { useTabsContext } from "../../components/Sidebar/SidebarTabs/TabsContext";
-import "./FocusPage.scss";
+import "./AGROPOLEA.scss";
 
-function Focus() {
+const AGROPOLEA = () => {
   const { setTabs } = useTabsContext();
 
   useEffect(() => {
-    const tabsData = ["ACTUALITES", "EURAFRIQUE", "HISTORIQUE", "PARTENAIRES", "LA FRANCOPHONIE"];
+    const tabsData = [];
     setTabs(tabsData);
   }, [setTabs]);
 
   return (
     <div>
-      <h1>FOCUS Page</h1>
+      <h1>AGROPOLEA Page</h1>
     </div>
   );
-}
+};
 
-export default Focus;
+export default AGROPOLEA;

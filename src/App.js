@@ -13,6 +13,12 @@ import i18n from "i18next";
 import { TabsProvider } from "./components/Sidebar/SidebarTabs/TabsContext";
 import Focus from "./pages/FocusPage/FocusPage";
 import AJVICOJEA from "./pages/AJVI-COJEA/AJVI-COJEA";
+import POLMAR from "./pages/POLMAR/POLMAR";
+import AGROPOLEA from "./pages/AGROPOLEA/AGROPOLEA";
+import IDEA from "./pages/IDEA/IDEA";
+import BENEVOLEA from "./pages/BENEVOLEA/BENEVOLEA";
+import DIGEA from "./pages/DIGEA/DIGEA";
+import GMTV from "./pages/GMTV/GMTV";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
@@ -55,12 +61,12 @@ function App() {
           <Routes>
             <Route exact path="/FOCUS" element={<Focus />} />
             <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
-            <Route exact path="/POLMAR" />
-            <Route exact path="/EAGROPOLE" />
-            <Route exact path="/IDEA" />
-            <Route exact path="/BENEVOLEA" />
-            <Route exact path="/DIGEA" />
-            <Route exact path="/GM-TV" />
+            <Route exact path="/POLMAR" element={<POLMAR />} />
+            <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
+            <Route exact path="/IDEA" element={<IDEA />} />
+            <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
+            <Route exact path="/DIGEA" element={<DIGEA />} />
+            <Route exact path="/GM-TV" element={<GMTV />} />
           </Routes>
         </div>
       </div>
