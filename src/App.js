@@ -10,6 +10,9 @@ import esTranslation from "./locales/es.json";
 import arTranslation from "./locales/ar.json";
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
+import { TabsProvider } from "./components/Sidebar/SidebarTabs/TabsContext";
+import Focus from "./pages/FocusPage/FocusPage";
+import AJVICOJEA from "./pages/AJVI-COJEA/AJVI-COJEA";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
@@ -40,27 +43,28 @@ function App() {
   }, []);
 
   if (!isI18nInitialized) {
-    // Render a loading state while i18n initialization is in progress
     return <div>Loading...</div>;
   }
 
   return (
-    <div className="App">
-      <Navigation />
-      <div className="main-content">
-        <Sidebar />
-        <Routes>
-          <Route exact path="/FOCUS" />
-          <Route exact path="/AJVI-COJEA" />
-          <Route exact path="/POLMAR" />
-          <Route exact path="/EAGROPOLE" />
-          <Route exact path="/IDEA" />
-          <Route exact path="/BENEVOLEA" />
-          <Route exact path="/DIGEA" />
-          <Route exact path="/GM-TV" />
-        </Routes>
+    <TabsProvider>
+      <div className="App">
+        <Navigation />
+        <div className="main-content">
+          <Sidebar />
+          <Routes>
+            <Route exact path="/FOCUS" element={<Focus />} />
+            <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
+            <Route exact path="/POLMAR" />
+            <Route exact path="/EAGROPOLE" />
+            <Route exact path="/IDEA" />
+            <Route exact path="/BENEVOLEA" />
+            <Route exact path="/DIGEA" />
+            <Route exact path="/GM-TV" />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </TabsProvider>
   );
 }
 

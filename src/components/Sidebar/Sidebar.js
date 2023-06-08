@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "./Sidebar.scss";
 import LanguagesMenu from "../LanguagesMenu/LanguagesMenu";
 import MemberButton from "../memberButton/memberButton";
+import SidebarTabs from "./SidebarTabs/SidebarTabs";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +41,7 @@ const Sidebar = () => {
       ></div>
       <LanguagesMenu />
       <MemberButton />
+      <SidebarTabs />
     </div>
   );
 };
