@@ -14,7 +14,13 @@ const LinksBlock = () => {
       <h2>{t("PUISQUE VOUS ÊTES LÀ …")}</h2>
       <p>{t("Des interrogations? Vouloir communiquer...")}</p>
       <button onClick={() => handleButtonClick(1)}>{t("NOUS CONTACTER")}</button>
+      <p>{t("Marquer votre intérêt et participer à cette grande chaîne de la solidarité")}</p>
       <button onClick={() => handleButtonClick(2)}>{t("NOUS REJOINDRE")}</button>
+      <p>
+        {t(
+          "Faire avancer cette coopération pour construire l’avenir en nous aidant à financer nos projets en toute liberté de parole et de nos axes de développement."
+        )}
+      </p>
       <button onClick={() => handleButtonClick(3)}>{t("NOUS SOUTENIR")}</button>
     </div>
   );
