@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
 import { useTabsContext } from "../../components/Sidebar/SidebarTabs/TabsContext";
+import { useTranslation } from "react-i18next";
 import "./FocusPage.scss";
 
 function Focus() {
   const { setTabs } = useTabsContext();
+  const { t } = useTranslation();
 
   useEffect(() => {
-    const tabsData = ["ACTUALITES", "EURAFRIQUE", "HISTORIQUE", "PARTENAIRES", "LA FRANCOPHONIE"];
+    const tabsData = [
+      t("ACTUALITES"),
+      t("EURAFRIQUE"),
+      t("HISTORIQUE"),
+      t("PARTENAIRES"),
+      t("LA FRANCOPHONIE"),
+    ];
     setTabs(tabsData);
-  }, [setTabs]);
+  }, [setTabs, t]);
 
   return (
     <div className="focus-page">

@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const LinksBlock = () => {
+  const { t } = useTranslation();
   const handleButtonClick = (buttonIndex) => {
     // Handle button click logic here
     // You can use the buttonIndex parameter to identify which button was clicked
@@ -9,11 +11,11 @@ const LinksBlock = () => {
 
   return (
     <div className="links-container">
-      <h2>PUISQUE VOUS ÊTES LÀ …</h2>
-      <p>Des interrogations? Vouloir communiquer...</p>
-      <button onClick={() => handleButtonClick(1)}>NOUS CONTACTER</button>
-      <button onClick={() => handleButtonClick(2)}>NOUS REJOINDRE</button>
-      <button onClick={() => handleButtonClick(3)}>NOUS SOUTENIR</button>
+      <h2>{t("PUISQUE VOUS ÊTES LÀ …")}</h2>
+      <p>{t("Des interrogations? Vouloir communiquer...")}</p>
+      <button onClick={() => handleButtonClick(1)}>{t("NOUS CONTACTER")}</button>
+      <button onClick={() => handleButtonClick(2)}>{t("NOUS REJOINDRE")}</button>
+      <button onClick={() => handleButtonClick(3)}>{t("NOUS SOUTENIR")}</button>
     </div>
   );
 };
