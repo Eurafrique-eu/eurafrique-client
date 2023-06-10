@@ -68,7 +68,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>
-          Copyright © 2023{" "}
+          © 2023 Eurafrique.eu. {t("Developpé par ")}&nbsp;
           <a href="https://www.linkedin.com/in/thomas-augot/" target="_blank" rel="noreferrer">
             Thomas Augot
           </a>
