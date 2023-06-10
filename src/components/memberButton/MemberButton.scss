@@ -1,14 +1,14 @@
 .blue-button {
   background-color: rgb(23, 23, 136);
   color: white;
-  padding: 8px 16px;
+  padding: 8px 8px;
   border: none;
   border-radius: 20px;
   font-size: 18px;
   font-weight: normal !important;
   cursor: pointer;
-  margin-top: 20px;
   transition: transform 0.2s ease;
+  min-width: 200px;
 
   &:hover {
     animation: pulse 2s infinite;

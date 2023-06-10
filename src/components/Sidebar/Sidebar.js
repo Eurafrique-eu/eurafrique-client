@@ -4,6 +4,7 @@ import LanguagesMenu from "../LanguagesMenu/LanguagesMenu";
 import MemberButton from "../memberButton/memberButton";
 import SidebarTabs from "./SidebarTabs/SidebarTabs";
 import LinksBlock from "./LinksBlock/LinksBlock";
+import Socials from "./Socials/Socials";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +45,7 @@ const Sidebar = () => {
       <MemberButton />
       <SidebarTabs />
       <LinksBlock />
+      <Socials />
     </div>
   );
 };
