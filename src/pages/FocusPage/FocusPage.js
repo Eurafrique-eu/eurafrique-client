@@ -9,6 +9,7 @@ function Focus() {
 
   useEffect(() => {
     const tabsData = [
+      t("ORGANIGRAMME EA"),
       t("ACTUALITES"),
       t("EURAFRIQUE"),
       t("HISTORIQUE"),

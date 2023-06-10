@@ -8,7 +8,7 @@ const BENEVOLEA = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const tabsData = [];
+    const tabsData = [t("ORGANIGRAMME EA")];
     setTabs(tabsData);
   }, [setTabs, t]);
 
