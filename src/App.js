@@ -19,7 +19,7 @@ import IDEA from "./pages/IDEA/IDEA";
 import BENEVOLEA from "./pages/BENEVOLEA/BENEVOLEA";
 import DIGEA from "./pages/DIGEA/DIGEA";
 import GMTV from "./pages/GMTV/GMTV";
-import Footer from "./components/Sidebar/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);

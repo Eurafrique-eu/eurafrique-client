@@ -5,7 +5,7 @@ import {
   faLinkedin,
   faInstagramSquare,
 } from "@fortawesome/free-brands-svg-icons";
-import blueShape from "../../../assets/blue-svg (2).png";
+import blueShape from "../../../src/assets/blue-svg (2).png";
 import { useTranslation } from "react-i18next";
 import "./Footer.scss";
 

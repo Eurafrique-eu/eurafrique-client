@@ -21,9 +21,18 @@ function Focus() {
 
   return (
     <div className="focus-page">
-      <h1>FOCUS Page</h1>
       <div className="page-content">
-        <p>
+        <div className="column-one">
+          <h1>L'EDITO</h1>
+          <p>
+            Discours parfois formatés, forums, colloques et conférences sur l’émergence de l’Afrique
+            ne doivent pas occulter sa partie immergée et son avenir. Ces discours de séduction
+            doivent tenir compte de la réalité de femmes,d’hommes et d’une jeunesse fiers de leurs
+            origines
+          </p>
+          <img src={require("../../../src/assets/iceberg-africa.PNG")} alt="Africa under water" />
+        </div>
+        <div className="column-one">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
           tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
           quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
@@ -32,17 +41,7 @@ function Focus() {
           odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
           nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam
           nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-          quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-          consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-          consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-          odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-          nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        </p>
+        </div>
       </div>
     </div>
   );
