@@ -6,6 +6,7 @@ import {
   faInstagramSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import blueShape from "../../../assets/blue-svg (2).png";
+import { useTranslation } from "react-i18next";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -21,12 +22,14 @@ const Footer = () => {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <img className="blue-shape-left" src={blueShape} alt="Blue Shape" />
       <div className="footer-content">
         <div className="footer-socials">
-          <h2>Nous suivre:</h2>
+          <h2>{t("NOUS SUIVRE")}</h2>
           <a href="/" onClick={handleLinkClick}>
             <FontAwesomeIcon
               icon={faFacebookSquare}
@@ -57,10 +60,10 @@ const Footer = () => {
           </a>
         </div>
         <div className="footer-links">
-          <a href="/">Plan du site</a>
-          <a href="/">Documents administratifs et statutaires</a>
-          <a href="/">Mentions légales et CGU</a>
-          <a href="/">Gestion des cookies</a>
+          <a href="/">{t("Plan du site")}</a>
+          <a href="/">{t("Documents administratifs et statutaires")}</a>
+          <a href="/">{t("Mentions légales et CGU")}</a>
+          <a href="/">{t("Gestion des cookies")}</a>
         </div>
       </div>
       <div className="footer-bottom">
