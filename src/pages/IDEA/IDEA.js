@@ -9,7 +9,6 @@ const IDEA = () => {
 
   useEffect(() => {
     const tabsData = [
-      t("ORGANIGRAMME EA"),
       t("PRESENTATION"),
       t("EVENEMENTIELS"),
       t("BOUSSOLE EURAFRIQUE"),

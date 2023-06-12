@@ -8,7 +8,7 @@ const DIGEA = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const tabsData = [t("PRESSE"), t("ORGANIGRAMME EA")];
+    const tabsData = [t("PRESSE")];
     setTabs(tabsData);
   }, [setTabs, t]);
 

@@ -9,7 +9,6 @@ const AJVICOJEA = () => {
 
   useEffect(() => {
     const tabsData = [
-      t("ORGANIGRAMME EA"),
       t("AJVI"),
       t("COJEA"),
       t("AJVC"),

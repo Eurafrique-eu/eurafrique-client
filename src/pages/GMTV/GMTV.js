@@ -8,7 +8,7 @@ const GMTV = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const tabsData = [t("ORGANIGRAMME EA")];
+    const tabsData = [];
     setTabs(tabsData);
   }, [setTabs, t]);
 
