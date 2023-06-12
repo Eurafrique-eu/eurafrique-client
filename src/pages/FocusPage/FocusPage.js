@@ -25,21 +25,82 @@ function Focus() {
           <h1>L'EDITO</h1>
           <p>
             Discours parfois formatés, forums, colloques et conférences sur l’émergence de l’Afrique
-            ne doivent pas occulter sa partie immergée et son avenir. Ces discours de séduction
-            doivent tenir compte de la réalité de femmes,d’hommes et d’une jeunesse fiers de leurs
-            origines
+            ne doivent pas occulter sa partie immergée et son avenir. <br />
+            <br />
+            Ces discours de séduction doivent tenir compte de la réalité de femmes,d’hommes et d’une
+            jeunesse fiers de leurs origines.
           </p>
           <img src={require("../../../src/assets/iceberg-africa.PNG")} alt="Africa under water" />
+          <p>
+            Une Économie Sociale et Solidaire doit être au centre de cette croissance attendue par
+            les populations. <br />
+            <br />
+            Coopérer pour construire l’avenir et mettre en place des passerelles entreprenariales
+            entre l’Europe et l’Afrique doit être une opportunité pour ces deux continents. <br />
+            <br /> EURAFRIQUE doit devenir la plateforme de cette chaîne de la solidarité et en
+            federer tous les maillons de ces énergies .
+          </p>
         </div>
-        <div className="column-one">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-          quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-          consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-          consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-          odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-          nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        <div className="column-two">
+          <h1>PARTICIPER AU PROJET EURAFRIQUE C’EST :</h1>
+          <p>
+            * Rejoindre la grande chaîne de la solidarité internationale permettant d'aider, de
+            suivre et de coordonner les initiatives sociales et entrepreneuriales dans des domaines
+            présentant un enjeu vital pour un développement pérenne du continent africain. <br />
+            <br />
+            * Piloter des stratégies thématiques ambitieuses. <br />
+            <br />* Promouvoir un système éducatif et de formation à l’auto-entrepreneuriat et à
+            l’artisanat, valorisant les ressources naturelles et les énergies renouvelables.
+          </p>
+          <h2>AJVI-COJEA</h2>
+          <br />
+          <br />
+          <p>
+            * Lutter contre la pollution terrestre et marine. Éviter les graves conséquences sur les
+            ressources hydriques. <br />
+            <br />* Protéger les écosystèmes des rejets de tout type de déchets et surtout de rejets
+            plastiques
+          </p>
+          <h2>POLMAR</h2>
+          <br />
+          <br />
+          <p>
+            Renforcer les activités et les capacités des entrepreneurs agricoles, notamment chez les
+            jeunes et chez les femmes, au sein d’organisations autonomes et professionnalisées.
+            Passer d’une agriculture de subsistance à une activité de productivité.
+          </p>
+          <br />
+          <h2>AGROPOLEA</h2>
+          <br />
+          <br />
+          <p>
+            Fédérer des initiatives, des idées et des réflexions participatives pour des entreprises
+            sociales et solidaires.
+          </p>
+          <br />
+          <h2>IDEA</h2>
+          <br />
+          <br />
+          <p>
+            Donner du temps n’est pas perdre son temps. Disponibilités pour rejoindre notre
+            communauté dans un bénévolat appuyé par la digitalisation.
+          </p>
+          <br />
+          <h2>BENEVOLEA</h2>
+          <br />
+          <br />
+          <p>Aucun espace civique sans espace numérique.</p>
+          <br />
+          <br />
+          <h2>DIGEA</h2>
+          <br />
+          <br />
+          <p>
+            .................................................
+            <br />
+            .....................................
+          </p>
+          <h2>GM TV</h2>
         </div>
       </div>
     </div>

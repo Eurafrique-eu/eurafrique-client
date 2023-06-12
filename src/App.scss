@@ -31,6 +31,36 @@ body {
 
 @mixin pageContent {
   display: flex;
+  .page-content {
+    gap: 60px;
+    padding-right: 40px;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(23, 23, 136);
+    margin: 20px 0;
+  }
+  h2 {
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: -10px;
+  }
+  img {
+    margin: 30px 0;
+  }
+  .column-one {
+    flex-basis: 50%;
+    padding: 0 30px 0 0;
+  }
+  .column-two {
+    flex-basis: 50%;
+    padding: 0 30px 0 20px;
+  }
+  p {
+    text-align: left;
+  }
 }
 
 .page-content {
