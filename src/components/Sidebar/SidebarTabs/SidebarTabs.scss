@@ -17,6 +17,10 @@
       animation: pulse 1s infinite;
       transition: 0.2s;
     }
+    &.active {
+      background-color: rgb(23, 23, 136);
+      color: white;
+    }
 
     @keyframes pulse {
       0% {
