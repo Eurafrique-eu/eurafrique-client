@@ -31,6 +31,8 @@ body {
 
 @mixin pageContent {
   display: flex;
+  padding-bottom: 40px;
+
   .page-content {
     gap: 60px;
     padding-right: 40px;
@@ -39,13 +41,19 @@ body {
     font-size: 30px;
     font-weight: 800;
     color: rgb(23, 23, 136);
-    margin: 20px 0;
+    margin: 40px 0 20px 0;
+    text-align: left;
   }
   h2 {
     text-align: right;
     font-weight: 600;
     margin-bottom: 10px;
     margin-top: -10px;
+  }
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: left;
   }
   img {
     margin: 25px 0;
@@ -60,6 +68,10 @@ body {
   }
   p {
     text-align: left;
+  }
+  .links {
+    text-underline-offset: 3px;
+    color: black;
   }
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useTabsContext } from "../../components/Sidebar/SidebarTabs/TabsContext";
 import { useTranslation } from "react-i18next";
 import "./BENEVOLEA.scss";
+import { Link } from "react-router-dom";
 
 const BENEVOLEA = () => {
   const { setTabs } = useTabsContext();
@@ -24,8 +25,6 @@ const BENEVOLEA = () => {
             la digitalisation pour des programmes de formation, insertion professionnelle pour les
             populations et de soutien aux porteurs de projets de développement local.
           </p>
-          <br />
-          <br />
           <h1>REJOINDRE LA GRANDE CHAINE DE LA SOLIDARITE</h1>
           <p>
             Contribuer au developpement economique et social en Afrique en favorisant les activites
@@ -35,23 +34,41 @@ const BENEVOLEA = () => {
             concretement des projets de developemetn entreprenarial et de competences sur le
             continent africain.{" "}
           </p>
-          <br />
-          <br />
-          <img
-            src={require("../../../src/assets/benevolea-illu.PNG")}
-            alt="benevolea-description"
-          />
           <h1>PARLER DE NOUS - SOUTENIR LES PROJETS DE LA COMMUNAUTE EURAFRIQUE</h1>
-        </div>
-        <div className="column-two">
-          <h1>RENCONTRONS NOUS</h1>
+          <h3>
+            <Link to="/" className="links">
+              NOUS REJOINDRE
+            </Link>
+          </h3>
           <p>
             Notre force c’est votre experience et votre disponibilite Soutenir et developper les
             capacites de chacun de nos benevole en s’appuyant sur des approches innovantes. Nous
             aider a collecter dans financements et partenariats{" "}
           </p>
+        </div>
+        <div className="column-two">
+          <h3>
+            <Link to="/" className="links">
+              DEVENIR UN MAILLON EURAFRIQUE
+            </Link>
+          </h3>
+          <img
+            src={require("../../../src/assets/benevolea-illu.PNG")}
+            alt="benevolea-description"
+            style={{ width: "150px", marginLeft: "-120px" }}
+          />
+          <p>
+            - MEMBRE <br /> - MEMBRE ACTIF <br />- MEMBRE BIENFAITEUR <br />- MEMBRE REFERENT <br />{" "}
+            - MEMBRE AMBASSADEUR <br />- MEMBRE VOLONTAIRE <br />
+            - MEMBRE PARTENAIRE <br />
+            - MEMBRE INSTITUTIONNEL <br />
+          </p>
           <br />
-          <br />
+          <h3>
+            <Link to="/" className="links">
+              RECEVOIR NOTRE LETTRE D’INFORMATION
+            </Link>
+          </h3>
           <h1>AUCUN ESPACE CIVIQUE SANS ESPACE NUMERIQUE</h1>
           <p>
             Réunir un maximum de talents utiles (Gestion administrative, accompagnement technique,
