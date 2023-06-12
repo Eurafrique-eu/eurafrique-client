@@ -2,9 +2,19 @@
 
 .focus-page {
   @include pageBase;
+  .page-content {
+    gap: 60px;
+    padding-right: 40px;
+  }
   h1 {
     font-size: 50px;
     font-weight: 600;
     color: black;
+  }
+  .column-one {
+    flex-basis: 50%;
+  }
+  .column-two {
+    flex-basis: 50%;
   }
 }
