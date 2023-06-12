@@ -26,6 +26,7 @@ body {
 @mixin pageBase {
   width: 80%;
   padding: 10px 30px;
+  display: flex;
 }
 
 @mixin pageContent {
