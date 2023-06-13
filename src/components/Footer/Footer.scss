@@ -37,8 +37,11 @@
   .footer-links {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-left: 5vw;
     text-align: center;
     a {
+      margin: 0 20px;
       color: black;
       text-underline-offset: 3px;
     }
