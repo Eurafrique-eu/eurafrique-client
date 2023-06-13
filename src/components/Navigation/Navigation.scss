@@ -5,7 +5,7 @@
   background-color: #ffffff;
   position: absolute;
   padding: 15px 0 !important;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 10px 0px !important;
 
   .tabs {
     display: flex;
@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    max-width: 600px;
+    max-width: 650px;
 
     .tab {
       color: rgb(23, 23, 136);
