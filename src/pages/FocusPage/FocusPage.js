@@ -43,6 +43,8 @@ function Focus() {
         </div>
         <div className="column-two">
           <h1>PARTICIPER AU PROJET EURAFRIQUE C’EST :</h1>
+          <br />
+          <h2>AJVI-COJEA</h2>
           <p>
             * Rejoindre la grande chaîne de la solidarité internationale permettant d'aider, de
             suivre et de coordonner les initiatives sociales et entrepreneuriales dans des domaines
@@ -52,55 +54,54 @@ function Focus() {
             <br />* Promouvoir un système éducatif et de formation à l’auto-entrepreneuriat et à
             l’artisanat, valorisant les ressources naturelles et les énergies renouvelables.
           </p>
-          <h2>AJVI-COJEA</h2>
           <br />
           <br />
+          <h2>POLMAR</h2>
           <p>
             * Lutter contre la pollution terrestre et marine. Éviter les graves conséquences sur les
             ressources hydriques. <br />
             <br />* Protéger les écosystèmes des rejets de tout type de déchets et surtout de rejets
             plastiques
           </p>
-          <h2>POLMAR</h2>
           <br />
           <br />
+          <h2>AGROPOLEA</h2>{" "}
           <p>
             Renforcer les activités et les capacités des entrepreneurs agricoles, notamment chez les
             jeunes et chez les femmes, au sein d’organisations autonomes et professionnalisées.
             Passer d’une agriculture de subsistance à une activité de productivité.
           </p>
           <br />
-          <h2>AGROPOLEA</h2>
           <br />
           <br />
+          <h2>IDEA</h2>
           <p>
             Fédérer des initiatives, des idées et des réflexions participatives pour des entreprises
             sociales et solidaires.
           </p>
           <br />
-          <h2>IDEA</h2>
           <br />
           <br />
+          <h2>BENEVOLEA</h2>
           <p>
             Donner du temps n’est pas perdre son temps. Disponibilités pour rejoindre notre
             communauté dans un bénévolat appuyé par la digitalisation.
           </p>
           <br />
-          <h2>BENEVOLEA</h2>
-          <br />
-          <br />
-          <p>Aucun espace civique sans espace numérique.</p>
           <br />
           <br />
           <h2>DIGEA</h2>
+          <p>Aucun espace civique sans espace numérique.</p>
           <br />
           <br />
+          <br />
+          <br />
+          <h2>GM TV</h2>
           <p>
             .................................................
             <br />
             .....................................
           </p>
-          <h2>GM TV</h2>
         </div>
       </div>
     </div>

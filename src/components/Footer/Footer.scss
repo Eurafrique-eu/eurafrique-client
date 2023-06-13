@@ -31,18 +31,19 @@
       background-color: rgb(45, 112, 45);
       color: white;
       padding: 8px;
-      transform: rotate(-1deg);
     }
   }
 
   .footer-links {
-    margin-left: 90px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     a {
-      margin: 0 20px;
       color: black;
       text-underline-offset: 3px;
     }
   }
+
   .footer-bottom {
     font-size: 14px;
     margin-left: 180px;
