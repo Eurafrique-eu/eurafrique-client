@@ -47,6 +47,14 @@ const Sidebar = ({ classes }) => {
     setSidebarTranslate(translateX);
   };
 
+  const handleTouchStart = (event) => {
+    event.stopPropagation();
+  };
+
+  const handleTouchMove = (event) => {
+    event.stopPropagation();
+  };
+
   if (isSmallScreen) {
     return (
       <div>
@@ -54,6 +62,8 @@ const Sidebar = ({ classes }) => {
           allowSwipeInChildren={true}
           anchor="left"
           open={isOpen}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
           onClose={() => {
             setIsOpen(false);
             setSidebarTranslate(-400);
