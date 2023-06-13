@@ -40,8 +40,8 @@ function App() {
         },
         fallbackLng: "fr", // Default language if the user's language is not available
         detection: {
-          order: ["localStorage", "navigator"], // Order in which detection methods are used
-          caches: ["localStorage"], // Store the language preference in localStorage
+          order: ["localStorage", "navigator"],
+          caches: ["localStorage"],
         },
       })
       .then(() => {
