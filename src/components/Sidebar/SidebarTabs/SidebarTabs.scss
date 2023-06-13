@@ -11,11 +11,13 @@
     text-decoration: none;
     color: black;
     font-weight: 600;
-    transition: 0.3s;
+    transition: 1s;
     text-align: left;
     &:hover {
       animation: pulse 1s infinite;
       transition: 0.2s;
+      background-color: rgb(23, 23, 136);
+      color: white;
     }
     &.active {
       background-color: rgb(23, 23, 136);
