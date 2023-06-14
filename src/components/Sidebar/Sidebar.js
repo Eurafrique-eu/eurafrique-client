@@ -13,12 +13,11 @@ import "./Sidebar.scss";
 const styles = {
   drawer: {
     width: "80%",
-    maxWidth: 400,
     flexShrink: 0,
   },
   drawerPaper: {
     width: "80%",
-    maxWidth: 400,
+    padding: "20px 20px 20px 20px",
     backgroundColor: "#f1eaeb",
   },
   container: {
@@ -32,7 +31,6 @@ const styles = {
   },
   sidebarOpen: {
     width: "80%",
-    // maxWidth: 400,
   },
   sidebarClosed: {
     width: 40,
@@ -87,7 +85,7 @@ const Sidebar = ({ classes }) => {
   if (isSmallScreen) {
     return (
       <div
-        className={`${classes.container} ${isOpen ? classes.sidebarOpen : classes.sidebarClosed}`}
+        className={`${classes.container} ${isOpen ? classes.sidebarOpen : classes.sidebarClosed} `}
       >
         <div
           className={`${classes.flap} ${isOpen ? "open" : ""}`}
@@ -119,10 +117,12 @@ const Sidebar = ({ classes }) => {
             paper: classes.drawerPaper,
           }}
         >
-          <LanguagesMenu />
-          <MemberButton />
-          <SidebarTabs />
-          <LinksBlock />
+          <div className={classes.sidebarContent}>
+            <LanguagesMenu />
+            <MemberButton />
+            <SidebarTabs />
+            <LinksBlock />
+          </div>
         </SwipeableDrawer>
       </div>
     );

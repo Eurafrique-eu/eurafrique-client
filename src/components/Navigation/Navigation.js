@@ -114,43 +114,75 @@ const Navbar = () => {
           </IconButton>
         </Toolbar>
         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-          <MenuItem onClick={handleClose}>
-            <Link to="/FOCUS" className="tab">
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+            <Link
+              to="/FOCUS"
+              className="tab"
+              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+            >
               {t("FOCUS")}
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/AJVI-COJEA" className="tab">
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+            <Link
+              to="/AJVI-COJEA"
+              className="tab"
+              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+            >
               AJVI-COJEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/POLMAR" className="tab">
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+            <Link
+              to="/POLMAR"
+              className="tab"
+              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+            >
               POLMAR
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/AGROPOLEA" className="tab">
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+            <Link
+              to="/AGROPOLEA"
+              className="tab"
+              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+            >
               AGROPOLEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/IDEA" className="tab">
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+            <Link
+              to="/IDEA"
+              className="tab"
+              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+            >
               IDEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/BENEVOLEA" className="tab">
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+            <Link
+              to="/BENEVOLEA"
+              className="tab"
+              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+            >
               BENEVOLEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/DIGEA" className="tab">
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+            <Link
+              to="/DIGEA"
+              className="tab"
+              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+            >
               DIGEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/GM-TV" className="tab">
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+            <Link
+              to="/GM-TV"
+              className="tab"
+              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+            >
               GM TV
             </Link>
           </MenuItem>

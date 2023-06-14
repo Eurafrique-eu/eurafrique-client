@@ -77,19 +77,13 @@
       margin-right: 10px;
       background-color: #ffffff;
     }
-    .tab {
-      text-decoration: none !important;
-    }
-    .nav-links {
-      flex-direction: column;
-      align-items: flex-end;
-    }
 
     .menu-icon {
       color: rgb(23, 23, 136);
       transition: transform 0.3s ease-in-out;
       width: 40px;
       height: auto;
+      margin-right: 10px;
 
       &.menu-open {
         transform: rotate(45deg);

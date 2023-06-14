@@ -3,6 +3,9 @@
   padding: 8px;
   margin-bottom: 80px;
   width: 90%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   h2 {
     background-color: rgb(23, 23, 136);
     color: white;
