@@ -20,6 +20,7 @@ import BENEVOLEA from "./pages/BENEVOLEA/BENEVOLEA";
 import DIGEA from "./pages/DIGEA/DIGEA";
 import GMTV from "./pages/GMTV/GMTV";
 import Footer from "./components/Footer/Footer";
+import Loading from "./components/Loading/Loading";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
@@ -50,7 +51,11 @@ function App() {
   }, []);
 
   if (!isI18nInitialized) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   return (
