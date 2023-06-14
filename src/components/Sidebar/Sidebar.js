@@ -33,7 +33,7 @@ const styles = {
     width: "80%",
   },
   sidebarClosed: {
-    width: 40,
+    width: 70,
   },
   flap: {
     position: "absolute",
