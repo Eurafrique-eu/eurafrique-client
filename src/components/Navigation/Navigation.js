@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const renderDesktopNavbar = () => {
     return (
-      <Toolbar className="navbar">
+      <Toolbar className="navbar" style={{ position: "sticky" }}>
         <Link to="/FOCUS">
           <img className="logo" src={desktopLogo} alt="Company Logo" />
         </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
   const renderMobileNavbar = () => {
     return (
       <>
-        <Toolbar className="navbar">
+        <Toolbar className="navbar" style={{ position: "fixed" }}>
           <Link to="/FOCUS">
             <img src={desktopLogo} className="logo" alt="Company Logo" />
           </Link>
@@ -192,7 +192,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       {isMobile ? (
         <div className={Boolean(anchorEl) ? "mobile-menu-open" : "mobile-menu-closed"}>
           {renderMobileNavbar()}

@@ -9,6 +9,7 @@
 .App {
   text-align: center;
   max-width: 2400px;
+  overflow-y: scroll;
 }
 
 html,
@@ -21,6 +22,7 @@ body {
 
 .main-content {
   display: flex;
+  margin-top: 180px;
 
   @media (max-width: 768px) {
     padding: 20px;
