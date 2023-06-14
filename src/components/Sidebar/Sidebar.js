@@ -75,19 +75,11 @@ const Sidebar = ({ classes }) => {
   const handleTouchMove = (event) => {
     event.stopPropagation();
 
-    // Check if the touch move event is happening inside the sidebar
-    const sidebarElement = document.querySelector(".sidebar");
-    const sidebarRect = sidebarElement.getBoundingClientRect();
+    // Check if the touch move event is happening from the left edge of the screen
     const touchX = event.touches[0].clientX;
-    const touchY = event.touches[0].clientY;
 
-    if (
-      touchX >= sidebarRect.left &&
-      touchX <= sidebarRect.right &&
-      touchY >= sidebarRect.top &&
-      touchY <= sidebarRect.bottom
-    ) {
-      // Touch move event is inside the sidebar, prevent default behavior
+    if (touchX < 50) {
+      // Touch move event is happening from the left edge, prevent default behavior
       event.preventDefault();
     }
   };
