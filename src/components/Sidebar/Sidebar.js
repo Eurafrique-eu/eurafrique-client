@@ -74,7 +74,22 @@ const Sidebar = ({ classes }) => {
 
   const handleTouchMove = (event) => {
     event.stopPropagation();
-    event.preventDefault();
+
+    // Check if the touch move event is happening inside the sidebar
+    const sidebarElement = document.querySelector(".sidebar");
+    const sidebarRect = sidebarElement.getBoundingClientRect();
+    const touchX = event.touches[0].clientX;
+    const touchY = event.touches[0].clientY;
+
+    if (
+      touchX >= sidebarRect.left &&
+      touchX <= sidebarRect.right &&
+      touchY >= sidebarRect.top &&
+      touchY <= sidebarRect.bottom
+    ) {
+      // Touch move event is inside the sidebar, prevent default behavior
+      event.preventDefault();
+    }
   };
 
   if (isSmallScreen) {
