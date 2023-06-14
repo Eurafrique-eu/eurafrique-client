@@ -21,6 +21,7 @@ import DIGEA from "./pages/DIGEA/DIGEA";
 import GMTV from "./pages/GMTV/GMTV";
 import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
+import NotFoundPage from "./pages/NotFound/NotFound";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
@@ -74,6 +75,7 @@ function App() {
             <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
             <Route exact path="/DIGEA" element={<DIGEA />} />
             <Route exact path="/GM-TV" element={<GMTV />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
         <Footer />
