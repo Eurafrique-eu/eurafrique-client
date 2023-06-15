@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -26,7 +26,6 @@ import NotFoundPage from "./pages/NotFound/NotFound";
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -52,22 +51,16 @@ function App() {
         setIsI18nInitialized(true);
       });
 
-    const handleTouchMove = (event) => {
-      if (location.pathname !== "/") {
-        event.preventDefault();
-      }
-    };
-
-    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+    // Remove the onTouchStart event from the App component
+    document.removeEventListener("touchstart", handleSwipeBack, { passive: false });
 
     return () => {
-      document.removeEventListener("touchmove", handleTouchMove);
+      // Add the onTouchStart event back to the App component
+      document.addEventListener("touchstart", handleSwipeBack, { passive: false });
     };
   }, [location]);
 
-  const handleSwipeBack = () => {
-    navigate(-1);
-  };
+  const handleSwipeBack = () => {};
 
   if (!isI18nInitialized) {
     return (
@@ -79,7 +72,7 @@ function App() {
 
   return (
     <TabsProvider>
-      <div className="App" onTouchStart={handleSwipeBack}>
+      <div className="App">
         <Navigation />
         <div className="main-content">
           <Sidebar />
