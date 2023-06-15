@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -25,7 +25,6 @@ import NotFoundPage from "./pages/NotFound/NotFound";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -52,17 +51,35 @@ function App() {
       });
 
     const handleTouchMove = (event) => {
-      event.preventDefault();
+      const touch = event.touches[0];
+      const startX = touch.clientX;
+      const startY = touch.clientY;
+
+      const handleMove = (event) => {
+        const touch = event.touches[0];
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
+
+        // Check if the swipe is primarily horizontal (left to right)
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          // Prevent default behavior for horizontal swipes
+          event.preventDefault();
+        }
+      };
+
+      document.addEventListener("touchmove", handleMove, { passive: false });
+
+      return () => {
+        document.removeEventListener("touchmove", handleMove);
+      };
     };
 
-    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+    document.addEventListener("touchstart", handleTouchMove);
 
     return () => {
-      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchstart", handleTouchMove);
     };
-  }, [location]);
-
-  const handleSwipeBack = () => {};
+  }, []);
 
   if (!isI18nInitialized) {
     return (
@@ -74,7 +91,7 @@ function App() {
 
   return (
     <TabsProvider>
-      <div className="App" onTouchStart={handleSwipeBack}>
+      <div className="App">
         <Navigation />
         <div className="main-content">
           <Sidebar />
