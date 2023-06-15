@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useHistory } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -25,7 +25,7 @@ import NotFoundPage from "./pages/NotFound/NotFound";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -62,7 +62,7 @@ function App() {
       "/GM-TV",
     ];
 
-    const unlisten = history.listen((location) => {
+    const unlisten = navigate((location) => {
       const currentPath = location.pathname;
       const shouldDisableBackGesture = disableBackGestureRoutes.includes(currentPath);
       if (shouldDisableBackGesture) {
@@ -75,7 +75,7 @@ function App() {
     return () => {
       unlisten();
     };
-  }, [history]);
+  }, [navigate]);
 
   if (!isI18nInitialized) {
     return (
