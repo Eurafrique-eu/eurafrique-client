@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -25,6 +25,8 @@ import NotFoundPage from "./pages/NotFound/NotFound";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -51,7 +53,9 @@ function App() {
       });
 
     const handleTouchMove = (event) => {
-      event.preventDefault();
+      if (location.pathname === "/") {
+        event.preventDefault();
+      }
     };
 
     document.addEventListener("touchmove", handleTouchMove, { passive: false });
@@ -59,7 +63,11 @@ function App() {
     return () => {
       document.removeEventListener("touchmove", handleTouchMove);
     };
-  }, []);
+  }, [location]);
+
+  const handleSwipeBack = () => {
+    navigate(-1);
+  };
 
   if (!isI18nInitialized) {
     return (
@@ -71,7 +79,7 @@ function App() {
 
   return (
     <TabsProvider>
-      <div className="App">
+      <div className="App" onTouchStart={handleSwipeBack}>
         <Navigation />
         <div className="main-content">
           <Sidebar />
