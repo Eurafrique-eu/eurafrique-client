@@ -74,12 +74,10 @@ function App() {
       };
     };
 
-    const appContainer = document.querySelector(".App"); // Adjust the selector based on your actual container element
-
-    appContainer.addEventListener("touchstart", handleTouchMove);
+    document.addEventListener("touchstart", handleTouchMove, { passive: false });
 
     return () => {
-      appContainer.removeEventListener("touchstart", handleTouchMove);
+      document.removeEventListener("touchstart", handleTouchMove);
     };
   }, []);
 
