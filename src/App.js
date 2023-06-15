@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -25,7 +25,6 @@ import NotFoundPage from "./pages/NotFound/NotFound";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -51,31 +50,16 @@ function App() {
         setIsI18nInitialized(true);
       });
 
-    // Disable back gesture for specific routes
-    const disableBackGestureRoutes = [
-      "/AJVI-COJEA",
-      "/POLMAR",
-      "/AGROPOLEA",
-      "/IDEA",
-      "/BENEVOLEA",
-      "/DIGEA",
-      "/GM-TV",
-    ];
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
 
-    const unlisten = navigate((location) => {
-      const currentPath = location.pathname;
-      const shouldDisableBackGesture = disableBackGestureRoutes.includes(currentPath);
-      if (shouldDisableBackGesture) {
-        document.body.style.overscrollBehavior = "none";
-      } else {
-        document.body.style.overscrollBehavior = "";
-      }
-    });
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     return () => {
-      unlisten();
+      document.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [navigate]);
+  }, []);
 
   if (!isI18nInitialized) {
     return (
