@@ -70,10 +70,6 @@ function App() {
       };
 
       document.addEventListener("touchmove", handleMove, { passive: false });
-
-      return () => {
-        document.removeEventListener("touchmove", handleMove);
-      };
     };
 
     initializeI18n();
