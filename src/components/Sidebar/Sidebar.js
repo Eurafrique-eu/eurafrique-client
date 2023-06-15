@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { withStyles } from "@mui/styles";
-import { useSwipeable } from "react-swipeable";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import LanguagesMenu from "../LanguagesMenu/LanguagesMenu";
 import MemberButton from "../memberButton/memberButton";
