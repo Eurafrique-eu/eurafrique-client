@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -23,9 +23,24 @@ import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
 import NotFoundPage from "./pages/NotFound/NotFound";
 
+function SwipeRoutes({ children }) {
+  const handleTouchMove = (event) => {
+    event.preventDefault();
+  };
+
+  useEffect(() => {
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    return () => {
+      document.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
+
+  return <>{children}</>;
+}
+
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -52,25 +67,6 @@ function App() {
       });
   }, []);
 
-  const handleSwipeRight = (event) => {
-    // Prevent navigation on swipe right
-    event.stopPropagation();
-  };
-
-  const handleRouteChange = (newLocation) => {
-    // Add your custom route change logic here
-    console.log("Route changed to:", newLocation.pathname);
-  };
-
-  const handleLinkClick = (event) => {
-    // Add your custom link click logic here
-    console.log("Link clicked:", event.target.pathname);
-  };
-
-  useEffect(() => {
-    handleRouteChange(location);
-  }, [location]);
-
   if (!isI18nInitialized) {
     return (
       <div>
@@ -82,21 +78,23 @@ function App() {
   return (
     <TabsProvider>
       <div className="App">
-        <Navigation onLinkClick={handleLinkClick} />
+        <Navigation />
         <div className="main-content">
           <Sidebar />
-          <Routes onMouseDown={handleSwipeRight} onTouchStart={handleSwipeRight}>
-            <Route exact path="/" element={<Focus />} />
-            <Route exact path="/FOCUS" element={<Focus />} />
-            <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
-            <Route exact path="/POLMAR" element={<POLMAR />} />
-            <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
-            <Route exact path="/IDEA" element={<IDEA />} />
-            <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
-            <Route exact path="/DIGEA" element={<DIGEA />} />
-            <Route exact path="/GM-TV" element={<GMTV />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+          <SwipeRoutes>
+            <Routes>
+              <Route path="/" element={<Focus />} />
+              <Route path="/FOCUS" element={<Focus />} />
+              <Route path="/AJVI-COJEA" element={<AJVICOJEA />} />
+              <Route path="/POLMAR" element={<POLMAR />} />
+              <Route path="/AGROPOLEA" element={<AGROPOLEA />} />
+              <Route path="/IDEA" element={<IDEA />} />
+              <Route path="/BENEVOLEA" element={<BENEVOLEA />} />
+              <Route path="/DIGEA" element={<DIGEA />} />
+              <Route path="/GM-TV" element={<GMTV />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </SwipeRoutes>
         </div>
         <Footer />
       </div>
