@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { SwipeableViews } from "react-swipeable-views";
+import { useSwipeable } from "react-swipeable";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -25,6 +27,7 @@ import NotFoundPage from "./pages/NotFound/NotFound";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -51,6 +54,17 @@ function App() {
       });
   }, []);
 
+  const handleSwipe = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe(currentIndex + 1),
+    onSwipedRight: () => handleSwipe(currentIndex - 1),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
+
   if (!isI18nInitialized) {
     return (
       <div>
@@ -65,18 +79,20 @@ function App() {
         <Navigation />
         <div className="main-content">
           <Sidebar />
-          <Routes>
-            <Route exact path="/" element={<Focus />} />
-            <Route exact path="/FOCUS" element={<Focus />} />
-            <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
-            <Route exact path="/POLMAR" element={<POLMAR />} />
-            <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
-            <Route exact path="/IDEA" element={<IDEA />} />
-            <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
-            <Route exact path="/DIGEA" element={<DIGEA />} />
-            <Route exact path="/GM-TV" element={<GMTV />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+          <SwipeableViews index={currentIndex} onChangeIndex={handleSwipe} {...swipeHandlers}>
+            <Routes>
+              <Route exact path="/" element={<Focus />} />
+              <Route exact path="/FOCUS" element={<Focus />} />
+              <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
+              <Route exact path="/POLMAR" element={<POLMAR />} />
+              <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
+              <Route exact path="/IDEA" element={<IDEA />} />
+              <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
+              <Route exact path="/DIGEA" element={<DIGEA />} />
+              <Route exact path="/GM-TV" element={<GMTV />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </SwipeableViews>
         </div>
         <Footer />
       </div>
