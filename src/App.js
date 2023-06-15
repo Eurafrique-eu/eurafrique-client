@@ -53,6 +53,10 @@ function App() {
       });
 
     const handleTouchMove = (event) => {
+      if (event.target.classList.contains("sidebar")) {
+        return;
+      }
+
       event.preventDefault();
     };
 
