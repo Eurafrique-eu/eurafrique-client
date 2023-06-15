@@ -1,3 +1,5 @@
+@import "../../../App.scss";
+
 .sidebar-tabs {
   display: flex;
   flex-direction: column;
@@ -9,7 +11,7 @@
   }
 
   .sidebar-tab {
-    border: 2px solid rgb(23, 23, 136);
+    border: 2px solid $primary-color;
     padding: 5px 5px 3px 5px;
     text-decoration: none;
     color: black;
@@ -19,11 +21,11 @@
     &:hover {
       animation: pulse 1s infinite;
       transition: 0.2s;
-      background-color: rgb(23, 23, 136);
+      background-color: $primary-color;
       color: white;
     }
     &.active {
-      background-color: rgb(23, 23, 136);
+      background-color: $primary-color;
       color: white;
     }
 

@@ -1,3 +1,5 @@
+@import "../../../App.scss";
+
 .links-container {
   background-color: rgba(134, 184, 250, 0.2);
   padding: 8px;
@@ -7,7 +9,7 @@
     width: 100%;
   }
   h2 {
-    background-color: rgb(23, 23, 136);
+    background-color: $primary-color;
     color: white;
     font-size: 15px;
     padding: 8px 5px;

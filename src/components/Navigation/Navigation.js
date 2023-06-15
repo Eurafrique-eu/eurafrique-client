@@ -101,7 +101,7 @@ const Navbar = () => {
   const renderMobileNavbar = () => {
     return (
       <>
-        <Toolbar className="navbar" style={{ position: "fixed" }}>
+        <Toolbar className="navbar" style={{ position: "fixed", top: "-20px" }}>
           <Link to="/FOCUS">
             <img src={desktopLogo} className="logo" alt="Company Logo" />
           </Link>

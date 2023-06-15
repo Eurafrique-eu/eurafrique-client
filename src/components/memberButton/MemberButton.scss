@@ -1,5 +1,7 @@
+@import "../../App.scss";
+
 .blue-button {
-  background-color: rgb(23, 23, 136);
+  background-color: $primary-color;
   color: white;
   padding: 8px 8px;
   border: none;
