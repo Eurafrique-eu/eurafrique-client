@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useHistory } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -25,6 +25,7 @@ import NotFoundPage from "./pages/NotFound/NotFound";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -49,7 +50,32 @@ function App() {
       .then(() => {
         setIsI18nInitialized(true);
       });
-  }, []);
+
+    // Disable back gesture for specific routes
+    const disableBackGestureRoutes = [
+      "/AJVI-COJEA",
+      "/POLMAR",
+      "/AGROPOLEA",
+      "/IDEA",
+      "/BENEVOLEA",
+      "/DIGEA",
+      "/GM-TV",
+    ];
+
+    const unlisten = history.listen((location) => {
+      const currentPath = location.pathname;
+      const shouldDisableBackGesture = disableBackGestureRoutes.includes(currentPath);
+      if (shouldDisableBackGesture) {
+        document.body.style.overscrollBehavior = "none";
+      } else {
+        document.body.style.overscrollBehavior = "";
+      }
+    });
+
+    return () => {
+      unlisten();
+    };
+  }, [history]);
 
   if (!isI18nInitialized) {
     return (
