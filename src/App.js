@@ -23,7 +23,7 @@ import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
 import NotFoundPage from "./pages/NotFound/NotFound";
 
-function App() {
+const App = ({ history }) => {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
 
   useEffect(() => {
@@ -172,6 +172,6 @@ function App() {
       </div>
     </TabsProvider>
   );
-}
+};
 
 export default App;
