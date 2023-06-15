@@ -22,22 +22,7 @@ import GMTV from "./pages/GMTV/GMTV";
 import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
 import NotFoundPage from "./pages/NotFound/NotFound";
-
-function SwipeRoutes({ children }) {
-  const handleTouchMove = (event) => {
-    event.preventDefault();
-  };
-
-  useEffect(() => {
-    document.addEventListener("touchmove", handleTouchMove, { passive: false });
-
-    return () => {
-      document.removeEventListener("touchmove", handleTouchMove);
-    };
-  }, []);
-
-  return <>{children}</>;
-}
+import { Swipeable } from "react-swipeable";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
@@ -75,13 +60,18 @@ function App() {
     );
   }
 
+  const handleSwipe = (event) => {
+    // Disable navigation on swipe
+    event.event.preventDefault();
+  };
+
   return (
     <TabsProvider>
       <div className="App">
         <Navigation />
         <div className="main-content">
           <Sidebar />
-          <SwipeRoutes>
+          <Swipeable onSwiped={handleSwipe}>
             <Routes>
               <Route path="/" element={<Focus />} />
               <Route path="/FOCUS" element={<Focus />} />
@@ -94,7 +84,7 @@ function App() {
               <Route path="/GM-TV" element={<GMTV />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
-          </SwipeRoutes>
+          </Swipeable>
         </div>
         <Footer />
       </div>
