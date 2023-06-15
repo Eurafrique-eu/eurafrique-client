@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -60,27 +60,29 @@ function App() {
   }
 
   return (
-    <TabsProvider>
-      <div className="App">
-        <Navigation />
-        <div className="main-content">
-          <Sidebar />
-          <Routes>
-            <Route exact path="/" element={<Focus />} />
-            <Route exact path="/FOCUS" element={<Focus />} />
-            <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
-            <Route exact path="/POLMAR" element={<POLMAR />} />
-            <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
-            <Route exact path="/IDEA" element={<IDEA />} />
-            <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
-            <Route exact path="/DIGEA" element={<DIGEA />} />
-            <Route exact path="/GM-TV" element={<GMTV />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+    <BrowserRouter>
+      <TabsProvider>
+        <div className="App">
+          <Navigation />
+          <div className="main-content">
+            <Sidebar />
+            <Routes>
+              <Route exact path="/" element={<Focus />} />
+              <Route exact path="/FOCUS" element={<Focus />} options={{ gestureEnabled: false }} />
+              <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
+              <Route exact path="/POLMAR" element={<POLMAR />} />
+              <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
+              <Route exact path="/IDEA" element={<IDEA />} />
+              <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
+              <Route exact path="/DIGEA" element={<DIGEA />} />
+              <Route exact path="/GM-TV" element={<GMTV />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </TabsProvider>
+      </TabsProvider>
+    </BrowserRouter>
   );
 }
 
