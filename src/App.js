@@ -22,7 +22,6 @@ import GMTV from "./pages/GMTV/GMTV";
 import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
 import NotFoundPage from "./pages/NotFound/NotFound";
-import { useSwipeable } from "react-swipeable";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
@@ -52,13 +51,6 @@ function App() {
       });
   }, []);
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => {},
-    onSwipedRight: () => {},
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
-  });
-
   if (!isI18nInitialized) {
     return (
       <div>
@@ -73,20 +65,18 @@ function App() {
         <Navigation />
         <div className="main-content">
           <Sidebar />
-          <div {...handlers}>
-            <Routes>
-              <Route path="/" element={<Focus />} />
-              <Route path="/FOCUS" element={<Focus />} />
-              <Route path="/AJVI-COJEA" element={<AJVICOJEA />} />
-              <Route path="/POLMAR" element={<POLMAR />} />
-              <Route path="/AGROPOLEA" element={<AGROPOLEA />} />
-              <Route path="/IDEA" element={<IDEA />} />
-              <Route path="/BENEVOLEA" element={<BENEVOLEA />} />
-              <Route path="/DIGEA" element={<DIGEA />} />
-              <Route path="/GM-TV" element={<GMTV />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </div>
+          <Routes>
+            <Route path="/" element={<Focus />} />
+            <Route path="/FOCUS" element={<Focus />} />
+            <Route path="/AJVI-COJEA" element={<AJVICOJEA />} />
+            <Route path="/POLMAR" element={<POLMAR />} />
+            <Route path="/AGROPOLEA" element={<AGROPOLEA />} />
+            <Route path="/IDEA" element={<IDEA />} />
+            <Route path="/BENEVOLEA" element={<BENEVOLEA />} />
+            <Route path="/DIGEA" element={<DIGEA />} />
+            <Route path="/GM-TV" element={<GMTV />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
         </div>
         <Footer />
       </div>
