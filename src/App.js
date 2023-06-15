@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -60,96 +60,49 @@ function App() {
   }
 
   return (
-    <TabsProvider>
-      <div className="App">
-        <Navigation options={{ gestureEnabled: false }} />
-        <div className="main-content">
-          <Sidebar />
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={<Focus />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              exact
-              path="/FOCUS"
-              element={<Focus />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              exact
-              path="/AJVI-COJEA"
-              element={<AJVICOJEA />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              exact
-              path="/POLMAR"
-              element={<POLMAR />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              exact
-              path="/AGROPOLEA"
-              element={<AGROPOLEA />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              exact
-              path="/IDEA"
-              element={<IDEA />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              exact
-              path="/BENEVOLEA"
-              element={<BENEVOLEA />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              exact
-              path="/DIGEA"
-              element={<DIGEA />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              exact
-              path="/GM-TV"
-              element={<GMTV />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-            <Route
-              path="*"
-              element={<NotFoundPage />}
-              caseSensitive
-              end
-              options={{ gestureEnabled: false }}
-            />
-          </Routes>
+    <BrowserRouter>
+      <TabsProvider>
+        <div className="App">
+          <Navigation />
+          <div className="main-content">
+            <Sidebar />
+            <Routes>
+              <Route exact path="/" element={<Focus />} options={{ gestureEnabled: false }} />
+              <Route exact path="/FOCUS" element={<Focus />} options={{ gestureEnabled: false }} />
+              <Route
+                exact
+                path="/AJVI-COJEA"
+                element={<AJVICOJEA />}
+                options={{ gestureEnabled: false }}
+              />
+              <Route
+                exact
+                path="/POLMAR"
+                element={<POLMAR />}
+                options={{ gestureEnabled: false }}
+              />
+              <Route
+                exact
+                path="/AGROPOLEA"
+                element={<AGROPOLEA />}
+                options={{ gestureEnabled: false }}
+              />
+              <Route exact path="/IDEA" element={<IDEA />} options={{ gestureEnabled: false }} />
+              <Route
+                exact
+                path="/BENEVOLEA"
+                element={<BENEVOLEA />}
+                options={{ gestureEnabled: false }}
+              />
+              <Route exact path="/DIGEA" element={<DIGEA />} options={{ gestureEnabled: false }} />
+              <Route exact path="/GM-TV" element={<GMTV />} options={{ gestureEnabled: false }} />
+              <Route path="*" element={<NotFoundPage />} options={{ gestureEnabled: false }} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </TabsProvider>
+      </TabsProvider>
+    </BrowserRouter>
   );
 }
 
