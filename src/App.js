@@ -27,28 +27,30 @@ function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
 
   useEffect(() => {
-    const rootElement = document.documentElement;
-    rootElement.setAttribute("translate", "no");
+    const initializeI18n = () => {
+      const rootElement = document.documentElement;
+      rootElement.setAttribute("translate", "no");
 
-    i18n
-      .use(LanguageDetector)
-      .use(initReactI18next)
-      .init({
-        resources: {
-          en: { translation: enTranslation },
-          fr: { translation: frTranslation },
-          es: { translation: esTranslation },
-          ar: { translation: arTranslation },
-        },
-        fallbackLng: "fr", // Default language if the user's language is not available
-        detection: {
-          order: ["localStorage", "navigator"],
-          caches: ["localStorage"],
-        },
-      })
-      .then(() => {
-        setIsI18nInitialized(true);
-      });
+      i18n
+        .use(LanguageDetector)
+        .use(initReactI18next)
+        .init({
+          resources: {
+            en: { translation: enTranslation },
+            fr: { translation: frTranslation },
+            es: { translation: esTranslation },
+            ar: { translation: arTranslation },
+          },
+          fallbackLng: "fr", // Default language if the user's language is not available
+          detection: {
+            order: ["localStorage", "navigator"],
+            caches: ["localStorage"],
+          },
+        })
+        .then(() => {
+          setIsI18nInitialized(true);
+        });
+    };
 
     const handleTouchMove = (event) => {
       const touch = event.touches[0];
@@ -74,12 +76,15 @@ function App() {
       };
     };
 
-    document.addEventListener("touchstart", handleTouchMove, { passive: false });
+    initializeI18n();
+    document.addEventListener("touchstart", handleTouchMove, {
+      passive: false,
+    });
 
     return () => {
       document.removeEventListener("touchstart", handleTouchMove);
     };
-  }, []);
+  }, [isI18nInitialized]);
 
   if (!isI18nInitialized) {
     return (
