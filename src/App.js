@@ -57,7 +57,9 @@ function App() {
         return;
       }
 
-      event.preventDefault();
+      if (event.deltaX < 0) {
+        event.preventDefault();
+      }
     };
 
     document.addEventListener("touchmove", handleTouchMove, { passive: false });
