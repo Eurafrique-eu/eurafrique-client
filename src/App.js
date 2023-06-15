@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import { SwipeableViews } from "react-swipeable-views";
-import { useSwipeable } from "react-swipeable";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -27,7 +25,7 @@ import NotFoundPage from "./pages/NotFound/NotFound";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -54,16 +52,24 @@ function App() {
       });
   }, []);
 
-  const handleSwipe = (index) => {
-    setCurrentIndex(index);
+  const handleSwipeRight = (event) => {
+    // Prevent navigation on swipe right
+    event.stopPropagation();
   };
 
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => handleSwipe(currentIndex + 1),
-    onSwipedRight: () => handleSwipe(currentIndex - 1),
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
-  });
+  const handleRouteChange = (newLocation) => {
+    // Add your custom route change logic here
+    console.log("Route changed to:", newLocation.pathname);
+  };
+
+  const handleLinkClick = (event) => {
+    // Add your custom link click logic here
+    console.log("Link clicked:", event.target.pathname);
+  };
+
+  useEffect(() => {
+    handleRouteChange(location);
+  }, [location]);
 
   if (!isI18nInitialized) {
     return (
@@ -76,23 +82,21 @@ function App() {
   return (
     <TabsProvider>
       <div className="App">
-        <Navigation />
+        <Navigation onLinkClick={handleLinkClick} />
         <div className="main-content">
           <Sidebar />
-          <SwipeableViews index={currentIndex} onChangeIndex={handleSwipe} {...swipeHandlers}>
-            <Routes>
-              <Route exact path="/" element={<Focus />} />
-              <Route exact path="/FOCUS" element={<Focus />} />
-              <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
-              <Route exact path="/POLMAR" element={<POLMAR />} />
-              <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
-              <Route exact path="/IDEA" element={<IDEA />} />
-              <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
-              <Route exact path="/DIGEA" element={<DIGEA />} />
-              <Route exact path="/GM-TV" element={<GMTV />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </SwipeableViews>
+          <Routes onMouseDown={handleSwipeRight} onTouchStart={handleSwipeRight}>
+            <Route exact path="/" element={<Focus />} />
+            <Route exact path="/FOCUS" element={<Focus />} />
+            <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
+            <Route exact path="/POLMAR" element={<POLMAR />} />
+            <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
+            <Route exact path="/IDEA" element={<IDEA />} />
+            <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
+            <Route exact path="/DIGEA" element={<DIGEA />} />
+            <Route exact path="/GM-TV" element={<GMTV />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
         </div>
         <Footer />
       </div>
