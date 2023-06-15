@@ -51,12 +51,14 @@ function App() {
         setIsI18nInitialized(true);
       });
 
-    // Remove the onTouchStart event from the App component
-    document.removeEventListener("touchstart", handleSwipeBack, { passive: false });
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
+
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     return () => {
-      // Add the onTouchStart event back to the App component
-      document.addEventListener("touchstart", handleSwipeBack, { passive: false });
+      document.removeEventListener("touchmove", handleTouchMove);
     };
   }, [location]);
 
@@ -72,7 +74,7 @@ function App() {
 
   return (
     <TabsProvider>
-      <div className="App">
+      <div className="App" onTouchStart={handleSwipeBack}>
         <Navigation />
         <div className="main-content">
           <Sidebar />
