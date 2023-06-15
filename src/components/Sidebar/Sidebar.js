@@ -87,6 +87,8 @@ const Sidebar = ({ classes }) => {
       // Swiped from right to left, close the sidebar
       setIsOpen(false);
     }
+
+    event.preventDefault(); // Prevent default scrolling behavior
   };
 
   if (isSmallScreen) {
