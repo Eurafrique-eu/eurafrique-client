@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -23,85 +23,33 @@ import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
 import NotFoundPage from "./pages/NotFound/NotFound";
 
-const App = ({ history }) => {
+function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
 
   useEffect(() => {
-    const initializeI18n = () => {
-      const rootElement = document.documentElement;
-      rootElement.setAttribute("translate", "no");
+    const rootElement = document.documentElement;
+    rootElement.setAttribute("translate", "no");
 
-      i18n
-        .use(LanguageDetector)
-        .use(initReactI18next)
-        .init({
-          resources: {
-            en: { translation: enTranslation },
-            fr: { translation: frTranslation },
-            es: { translation: esTranslation },
-            ar: { translation: arTranslation },
-          },
-          fallbackLng: "fr", // Default language if the user's language is not available
-          detection: {
-            order: ["localStorage", "navigator"],
-            caches: ["localStorage"],
-          },
-        })
-        .then(() => {
-          setIsI18nInitialized(true);
-        });
-    };
-
-    const handleTouchMove = (event) => {
-      const touch = event.touches[0];
-      const startX = touch.clientX;
-      const startY = touch.clientY;
-
-      const handleMove = (event) => {
-        const touch = event.touches[0];
-        const deltaX = touch.clientX - startX;
-        const deltaY = touch.clientY - startY;
-
-        // Check if the swipe is primarily horizontal (left to right)
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-          // Prevent default behavior for horizontal swipes
-          event.preventDefault();
-        }
-      };
-
-      document.addEventListener("touchmove", handleMove, { passive: false });
-    };
-
-    initializeI18n();
-    document.addEventListener("touchstart", handleTouchMove, {
-      passive: false,
-    });
-
-    return () => {
-      document.removeEventListener("touchstart", handleTouchMove);
-    };
-  }, [isI18nInitialized]);
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const disableSwipeGesture = (event) => {
-      const touch = event.touches[0];
-      const deltaX = touch.clientX - touch.pageX;
-
-      if (deltaX > 50) {
-        event.preventDefault();
-      } else if (deltaX < -50) {
-        event.preventDefault();
-      }
-    };
-
-    document.addEventListener("touchmove", disableSwipeGesture, { passive: false });
-
-    return () => {
-      document.removeEventListener("touchmove", disableSwipeGesture);
-    };
-  }, [navigate]);
+    i18n
+      .use(LanguageDetector)
+      .use(initReactI18next)
+      .init({
+        resources: {
+          en: { translation: enTranslation },
+          fr: { translation: frTranslation },
+          es: { translation: esTranslation },
+          ar: { translation: arTranslation },
+        },
+        fallbackLng: "fr", // Default language if the user's language is not available
+        detection: {
+          order: ["localStorage", "navigator"],
+          caches: ["localStorage"],
+        },
+      })
+      .then(() => {
+        setIsI18nInitialized(true);
+      });
+  }, []);
 
   if (!isI18nInitialized) {
     return (
@@ -134,6 +82,6 @@ const App = ({ history }) => {
       </div>
     </TabsProvider>
   );
-};
+}
 
 export default App;
