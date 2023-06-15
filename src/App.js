@@ -53,9 +53,7 @@ function App() {
       });
 
     const handleTouchMove = (event) => {
-      if (location.pathname === "/") {
-        event.preventDefault();
-      }
+      event.preventDefault();
     };
 
     document.addEventListener("touchmove", handleTouchMove, { passive: false });
