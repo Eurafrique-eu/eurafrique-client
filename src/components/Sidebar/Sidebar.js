@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { withStyles } from "@mui/styles";
+import { useSwipeable } from "react-swipeable";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import LanguagesMenu from "../LanguagesMenu/LanguagesMenu";
 import MemberButton from "../memberButton/memberButton";
@@ -62,48 +63,29 @@ const Sidebar = ({ classes }) => {
   const [isOpen, setIsOpen] = useState(false);
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
-  const toggleDrawer = (open) => () => {
+  const toggleDrawer = (open) => {
     setIsOpen(open);
   };
 
-  const handleTouchStart = (event) => {
-    event.stopPropagation();
+  const handleSwipeRight = () => {
+    setIsOpen(true);
   };
 
-  const handleTouchMove = (event) => {
-    event.stopPropagation();
-
-    // Calculate the touch start and current positions
-    const touchStartX = event.touches[0].clientX;
-    const touchCurrentX = event.touches[0].clientX;
-
-    // Determine the threshold for swiping to open/close the sidebar
-    const swipeThreshold = 100;
-
-    if (touchCurrentX - touchStartX > swipeThreshold) {
-      // Swiped from left to right, open the sidebar
-      setIsOpen(true);
-    } else if (touchCurrentX - touchStartX < -swipeThreshold) {
-      // Swiped from right to left, close the sidebar
-      setIsOpen(false);
-    }
-
-    event.preventDefault(); // Prevent default scrolling behavior
+  const handleSwipeLeft = () => {
+    setIsOpen(false);
   };
 
   if (isSmallScreen) {
     return (
       <div
-        className={`${classes.container} ${isOpen ? classes.sidebarOpen : classes.sidebarClosed} `}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
+        className={`${classes.container} ${isOpen ? classes.sidebarOpen : classes.sidebarClosed}`}
       >
         <div
           className={`${classes.flap} ${isOpen ? "open" : ""}`}
           style={{
             left: 0,
           }}
-          onClick={toggleDrawer(!isOpen)}
+          onClick={() => toggleDrawer(!isOpen)}
           role="button"
         >
           {isOpen ? (
@@ -112,27 +94,29 @@ const Sidebar = ({ classes }) => {
             <KeyboardArrowRightIcon className={classes.flapIcon} />
           )}
         </div>
-        <SwipeableDrawer
-          allowSwipeInChildren={true}
-          anchor="left"
-          open={isOpen}
-          onClose={() => setIsOpen(false)}
-          onOpen={() => setIsOpen(true)}
-          ModalProps={{
-            disableBackdropClick: false,
-            disableEscapeKeyDown: false,
-          }}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-        >
-          <div className={classes.sidebarContent}>
-            <LanguagesMenu />
-            <MemberButton />
-            <SidebarTabs />
-            <LinksBlock />
-          </div>
-        </SwipeableDrawer>
+        <useSwipeable onSwipedRight={handleSwipeRight} onSwipedLeft={handleSwipeLeft}>
+          <SwipeableDrawer
+            allowSwipeInChildren={true}
+            anchor="left"
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            onOpen={() => setIsOpen(true)}
+            ModalProps={{
+              disableBackdropClick: false,
+              disableEscapeKeyDown: false,
+            }}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+            <div className={classes.sidebarContent}>
+              <LanguagesMenu />
+              <MemberButton />
+              <SidebarTabs />
+              <LinksBlock />
+            </div>
+          </SwipeableDrawer>
+        </useSwipeable>
       </div>
     );
   }
