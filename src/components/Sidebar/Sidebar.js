@@ -73,12 +73,19 @@ const Sidebar = ({ classes }) => {
   const handleTouchMove = (event) => {
     event.stopPropagation();
 
-    // Check if the touch move event is happening from the left edge of the screen
-    const touchX = event.touches[0].clientX;
+    // Calculate the touch start and current positions
+    const touchStartX = event.touches[0].clientX;
+    const touchCurrentX = event.touches[0].clientX;
 
-    if (touchX < 50) {
-      // Touch move event is happening from the left edge, prevent default behavior
-      event.preventDefault();
+    // Determine the threshold for swiping to open/close the sidebar
+    const swipeThreshold = 100;
+
+    if (touchCurrentX - touchStartX > swipeThreshold) {
+      // Swiped from left to right, open the sidebar
+      setIsOpen(true);
+    } else if (touchCurrentX - touchStartX < -swipeThreshold) {
+      // Swiped from right to left, close the sidebar
+      setIsOpen(false);
     }
   };
 
@@ -86,6 +93,8 @@ const Sidebar = ({ classes }) => {
     return (
       <div
         className={`${classes.container} ${isOpen ? classes.sidebarOpen : classes.sidebarClosed} `}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
       >
         <div
           className={`${classes.flap} ${isOpen ? "open" : ""}`}
@@ -105,8 +114,6 @@ const Sidebar = ({ classes }) => {
           allowSwipeInChildren={true}
           anchor="left"
           open={isOpen}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
           onClose={() => setIsOpen(false)}
           onOpen={() => setIsOpen(true)}
           ModalProps={{
