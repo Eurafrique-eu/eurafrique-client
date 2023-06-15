@@ -62,7 +62,7 @@ function App() {
   return (
     <TabsProvider>
       <div className="App">
-        <Navigation />
+        <Navigation options={{ gestureEnabled: false }} />
         <div className="main-content">
           <Sidebar />
           <Routes>
