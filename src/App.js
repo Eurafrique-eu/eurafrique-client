@@ -79,7 +79,20 @@ function App() {
   return (
     <TabsProvider>
       <div className="App">
-        <Navigation screenOptions={{ gestureEnabled: false }} />
+        <Navigation screenOptions={{ gestureEnabled: false }}>
+          <Routes>
+            <Route exact path="/" element={<Focus />} />
+            <Route exact path="/FOCUS" element={<Focus />} />
+            <Route exact path="/AJVI-COJEA" element={<AJVICOJEA />} />
+            <Route exact path="/POLMAR" element={<POLMAR />} />
+            <Route exact path="/AGROPOLEA" element={<AGROPOLEA />} />
+            <Route exact path="/IDEA" element={<IDEA />} />
+            <Route exact path="/BENEVOLEA" element={<BENEVOLEA />} />
+            <Route exact path="/DIGEA" element={<DIGEA />} />
+            <Route exact path="/GM-TV" element={<GMTV />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Navigation>
         <div className="main-content">
           <Sidebar />
           <Routes>
