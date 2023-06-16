@@ -47,6 +47,9 @@ $primary-color: rgb(23, 23, 136);
 
 .page-header {
   margin-top: 20px;
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
 }
 
 .page-title {
