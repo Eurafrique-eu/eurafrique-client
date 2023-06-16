@@ -23,7 +23,7 @@ const styles = {
   container: {
     position: "fixed",
     top: 0,
-    left: 0,
+    right: 0,
     height: "100%",
     overflow: "hidden",
     transition: "width 0.3s ease-in-out",
@@ -36,11 +36,11 @@ const styles = {
     width: 70,
   },
   flap: {
-    position: "absolute",
-    top: "45%",
-    left: 0,
-    transform: "translate(-50%, -50%)",
-    width: 60,
+    position: "fixed",
+    top: "40%",
+    right: 0,
+    transform: "translate(50%, -50%) rotate(180deg)",
+    width: 70,
     height: 70,
     background: "#fff",
     borderRadius: "50%",
@@ -49,12 +49,12 @@ const styles = {
     alignItems: "center",
     boxShadow: "0 2px 9px rgb(23, 23, 136)",
     zIndex: 3,
-    transition: "left 0.3s ease-in-out",
+    transition: "right 0.3s ease-in-out",
   },
   flapIcon: {
     fontSize: 35,
     color: "rgb(23, 23, 136)",
-    marginLeft: "13px",
+    marginLeft: "19px",
   },
 };
 
@@ -84,7 +84,7 @@ const Sidebar = ({ classes }) => {
         <div
           className={`${classes.flap} ${isOpen ? "open" : ""}`}
           style={{
-            left: 0,
+            right: 0,
           }}
           onClick={() => toggleDrawer(!isOpen)}
           role="button"
@@ -98,7 +98,7 @@ const Sidebar = ({ classes }) => {
         <useSwipeable onSwipedRight={handleSwipeRight} onSwipedLeft={handleSwipeLeft}>
           <SwipeableDrawer
             allowSwipeInChildren={true}
-            anchor="left"
+            anchor="right"
             open={isOpen}
             onClose={() => setIsOpen(false)}
             onOpen={() => setIsOpen(true)}
