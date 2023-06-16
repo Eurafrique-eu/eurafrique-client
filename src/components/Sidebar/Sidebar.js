@@ -40,8 +40,8 @@ const styles = {
     top: "45%",
     left: 0,
     transform: "translate(-50%, -50%)",
-    width: 50,
-    height: 60,
+    width: 60,
+    height: 70,
     background: "#fff",
     borderRadius: "50%",
     display: "flex",
@@ -66,11 +66,13 @@ const Sidebar = ({ classes }) => {
     setIsOpen(open);
   };
 
-  const handleSwipeRight = () => {
+  const handleSwipeRight = (event) => {
+    event.preventDefault();
     setIsOpen(true);
   };
 
-  const handleSwipeLeft = () => {
+  const handleSwipeLeft = (event) => {
+    event.preventDefault();
     setIsOpen(false);
   };
 
