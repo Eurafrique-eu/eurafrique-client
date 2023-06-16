@@ -37,15 +37,28 @@ body {
 $primary-color: rgb(23, 23, 136);
 
 @mixin pageBase {
-  width: 80%;
+  width: 100%;
   padding: 10px 30px;
   display: flex;
-  @media (max-width: 767px) {
-    width: 100%;
-  }
   @media (min-width: 768px) and (max-width: 991px) {
     width: 95%;
   }
+}
+
+.page-header {
+  margin-top: 20px;
+}
+
+.page-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: $primary-color;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+.page-description {
+  padding: 0 50px 30px 50px;
 }
 
 @mixin pageContent {
@@ -55,14 +68,6 @@ $primary-color: rgb(23, 23, 136);
   padding-right: 40px;
   @media (min-width: 768px) and (max-width: 991px) {
     padding-right: 0;
-  }
-
-  h1 {
-    font-size: 30px;
-    font-weight: 800;
-    color: $primary-color;
-    margin: 30px 0 20px 0;
-    text-align: left;
   }
 
   h2 {
