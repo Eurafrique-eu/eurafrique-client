@@ -17,21 +17,19 @@ const BENEVOLEA = () => {
     <div className="benevolea-page">
       <div className="page-content">
         <div className="column-one">
-          <h1 className="page-title">{t("DONNER DE SON TEMPS N’EST PAS PERDRE SON TEMPS")}</h1>
+          <h1 className="top-title">{t("DONNER DE SON TEMPS N’EST PAS PERDRE SON TEMPS")}</h1>
           <p>
             {t(
               "Participer au projet EURAFRIQUE c’est : Choisir d’apporter sa contribution à une communauté et de s’impliquer dans un trajet collectif. Pouvoir grâce à des formats souples d’engagement adaptables à vos disponibilités en télé-bénévolat.Un bénévolat appuyé par la digitalisation pour des programmes de formation, insertion professionnelle pour les populations et de soutien aux porteurs de projets de développement local."
             )}
           </p>
-          <h1 className="page-title">{t("REJOINDRE LA GRANDE CHAINE DE LA SOLIDARITE")}</h1>
+          <h1>{t("REJOINDRE LA GRANDE CHAINE DE LA SOLIDARITE")}</h1>
           <p>
             {t(
               "Contribuer au développement économique et social en Afrique en favorisant les activités génératrices de revenus, accompagner le développement, l'éducation et la formation dans les multiples défis du XXIe siècle. Mettre en relief la nécessité d'actions citoyennes et solidaires avec la mise en place d'une grande chaîne de bénévolat pour accompagner concrètement des projets de développement entrepreneurial et de compétences sur le continent africain."
             )}
           </p>
-          <h1 className="page-title">
-            {t("PARLER DE NOUS - SOUTENIR LES PROJETS DE LA COMMUNAUTE EURAFRIQUE")}
-          </h1>
+          <h1>{t("PARLER DE NOUS - SOUTENIR LES PROJETS DE LA COMMUNAUTE EURAFRIQUE")}</h1>
           <h3>
             <Link to="/" className="links">
               {t("NOUS REJOINDRE")}
@@ -44,7 +42,7 @@ const BENEVOLEA = () => {
           </p>
         </div>
         <div className="column-two">
-          <h3>
+          <h3 className="top-title">
             <Link to="/" className="links">
               {t("DEVENIR UN MAILLON EURAFRIQUE")}
             </Link>
@@ -71,7 +69,7 @@ const BENEVOLEA = () => {
               {t("RECEVOIR NOTRE LETTRE D’INFORMATION")}
             </Link>
           </h3>
-          <h1 className="page-title">{t("AUCUN ESPACE CIVIQUE SANS ESPACE NUMERIQUE")}</h1>
+          <h1>{t("AUCUN ESPACE CIVIQUE SANS ESPACE NUMERIQUE")}</h1>
           <p>
             {t(
               "Réunir un maximum de talents utiles (Gestion administrative, accompagnement technique, finance, marketing, communication)"

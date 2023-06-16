@@ -22,7 +22,7 @@ function Focus() {
     <div className="focus-page">
       <div className="page-content">
         <div className="column-one">
-          <h1 className="page-title">{t("L'ÉDITO")}</h1>
+          <h1 className="top-title">{t("L'ÉDITO")}</h1>
           <p>
             {t(
               "Discours parfois formatés, forums, colloques et conférences sur l’émergence de l’Afrique ne doivent pas occulter sa partie immergée et son avenir."
@@ -51,7 +51,7 @@ function Focus() {
           </p>
         </div>
         <div className="column-two">
-          <h1 className="page-title">{t("PARTICIPER AU PROJET EURAFRIQUE C’EST :")}</h1>
+          <h1 className="top-title">{t("PARTICIPER AU PROJET EURAFRIQUE C’EST :")}</h1>
           <br />
           <h2>AJVI-COJEA</h2>
           <p>
