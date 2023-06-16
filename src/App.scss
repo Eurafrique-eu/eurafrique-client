@@ -21,12 +21,15 @@ body {
 
 .main-content {
   display: flex;
-  margin-top: 160px;
+  margin-top: 180px;
+  @media (min-width: 767px) and (max-width: 991px) {
+    margin-top: 180px;
+    padding-left: 40px;
+  }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 20px;
     padding-left: 0;
-    margin-right: 20px;
     margin-top: 60px;
   }
 }
@@ -37,15 +40,21 @@ $primary-color: rgb(23, 23, 136);
   width: 80%;
   padding: 10px 30px;
   display: flex;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 95%;
+  }
 }
 
 @mixin pageContent {
   display: flex;
   padding-bottom: 40px;
-
-  .page-content {
-    gap: 60px;
-    padding-right: 40px;
+  gap: 60px;
+  padding-right: 40px;
+  @media (min-width: 768px) and (max-width: 991px) {
+    padding-right: 0;
   }
 
   h1 {
@@ -80,6 +89,9 @@ $primary-color: rgb(23, 23, 136);
     @media (max-width: 768px) {
       padding: 0;
     }
+    @media (min-width: 768px) and (max-width: 991px) {
+      padding: 0;
+    }
   }
 
   .column-two {
@@ -87,6 +99,9 @@ $primary-color: rgb(23, 23, 136);
     padding: 0 30px 0 20px;
 
     @media (max-width: 768px) {
+      padding: 0;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
       padding: 0;
     }
   }
@@ -100,7 +115,7 @@ $primary-color: rgb(23, 23, 136);
     color: black;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
   }
 }

@@ -12,7 +12,7 @@ import "./Navigation.scss";
 
 const Navbar = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   const [anchorEl, setAnchorEl] = useState(null);
   const [activeTab, setActiveTab] = useState("FOCUS");
   const { t } = useTranslation();
@@ -101,7 +101,7 @@ const Navbar = () => {
   const renderMobileNavbar = () => {
     return (
       <>
-        <Toolbar className="navbar" style={{ position: "fixed", top: "-20px" }}>
+        <Toolbar className="navbar" style={{ position: "fixed" }}>
           <Link to="/FOCUS">
             <img src={desktopLogo} className="logo" alt="Company Logo" />
           </Link>
@@ -114,78 +114,87 @@ const Navbar = () => {
           </IconButton>
         </Toolbar>
         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <div className="spacing">&nbsp;</div>
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "60px", paddingRight: "60px" }}>
             <Link
               to="/FOCUS"
               className="tab"
-              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+              style={{ color: "$primary-color", fontWeight: "600", textUnderlineOffset: "3px" }}
             >
               {t("FOCUS")}
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <div className="spacing">&nbsp;</div>
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "60px", paddingRight: "60px" }}>
             <Link
               to="/AJVI-COJEA"
               className="tab"
-              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+              style={{ color: "$primary-color", fontWeight: "600", textUnderlineOffset: "3px" }}
             >
               AJVI-COJEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <div className="spacing">&nbsp;</div>
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "60px", paddingRight: "60px" }}>
             <Link
               to="/POLMAR"
               className="tab"
-              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+              style={{ color: "$primary-color", fontWeight: "600", textUnderlineOffset: "3px" }}
             >
               POLMAR
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <div className="spacing">&nbsp;</div>
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "60px", paddingRight: "60px" }}>
             <Link
               to="/AGROPOLEA"
               className="tab"
-              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+              style={{ color: "$primary-color", fontWeight: "600", textUnderlineOffset: "3px" }}
             >
               AGROPOLEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <div className="spacing">&nbsp;</div>
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "60px", paddingRight: "60px" }}>
             <Link
               to="/IDEA"
               className="tab"
-              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+              style={{ color: "$primary-color", fontWeight: "600", textUnderlineOffset: "3px" }}
             >
               IDEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <div className="spacing">&nbsp;</div>
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "60px", paddingRight: "60px" }}>
             <Link
               to="/BENEVOLEA"
               className="tab"
-              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+              style={{ color: "$primary-color", fontWeight: "600", textUnderlineOffset: "3px" }}
             >
               BENEVOLEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <div className="spacing">&nbsp;</div>
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "60px", paddingRight: "60px" }}>
             <Link
               to="/DIGEA"
               className="tab"
-              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+              style={{ color: "$primary-color", fontWeight: "600", textUnderlineOffset: "3px" }}
             >
               DIGEA
             </Link>
           </MenuItem>
-          <MenuItem onClick={handleClose} style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <div className="spacing">&nbsp;</div>
+          <MenuItem onClick={handleClose} style={{ paddingLeft: "60px", paddingRight: "60px" }}>
             <Link
               to="/GM-TV"
               className="tab"
-              style={{ color: "black", fontWeight: "600", textUnderlineOffset: "3px" }}
+              style={{ color: "$primary-color", fontWeight: "600", textUnderlineOffset: "3px" }}
             >
               GM TV
             </Link>
           </MenuItem>
+          <div className="spacing">&nbsp;</div>
         </Menu>
       </>
     );

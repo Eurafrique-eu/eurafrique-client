@@ -6,8 +6,9 @@
   justify-content: space-between;
   background-color: #ffffff;
   position: absolute;
+  top: -20px;
   padding: 15px 0 !important;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 10px 0px !important;
+  box-shadow: $primary-color 0px 1px 10px 0px !important;
   width: 100%;
 
   .tabs {
@@ -93,9 +94,27 @@
         transform: rotate(45deg);
       }
     }
+    .spacing {
+      display: none;
+    }
   }
-}
 
-.css-hip9hq-MuiPaper-root-MuiAppBar-root {
-  box-shadow: none !important;
+  @media (min-width: 768px) and (max-width: 991px) {
+    top: 0;
+    .menu-icon {
+      left: -50px;
+      color: $primary-color;
+      width: 50px;
+      height: auto;
+      margin-right: 30px;
+    }
+    .spacing {
+      height: 60px;
+      width: auto;
+    }
+  }
+
+  .css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    box-shadow: none !important;
+  }
 }

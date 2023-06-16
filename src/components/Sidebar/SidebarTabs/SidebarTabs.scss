@@ -9,6 +9,9 @@
   @media (max-width: 768px) {
     width: 100%;
   }
+  @media (min-width: 768px) and (max-width: 991px) {
+    margin-inline: auto;
+  }
 
   .sidebar-tab {
     border: 2px solid $primary-color;

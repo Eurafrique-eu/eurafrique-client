@@ -53,9 +53,16 @@
         margin: 0;
         margin-top: 10px;
       }
+      @media (min-width: 767px) and (max-width: 991px) {
+        margin-top: 0;
+      }
     }
     @media (max-width: 768px) {
       flex-direction: column;
+    }
+    @media (min-width: 767px) and (max-width: 991px) {
+      flex-direction: column;
+      gap: 15px;
     }
   }
 
@@ -68,6 +75,10 @@
       text-underline-offset: 3px;
     }
     @media (max-width: 768px) {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+    @media (min-width: 767px) and (max-width: 991px) {
       margin-left: 0;
       margin-top: 20px;
     }

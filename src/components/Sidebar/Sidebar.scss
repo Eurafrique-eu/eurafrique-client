@@ -1,3 +1,5 @@
+@import "../../App.scss";
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -6,4 +8,53 @@
   width: 20%;
   height: 100%;
   z-index: 2;
+}
+
+.flap {
+  position: fixed;
+  right: 0;
+  top: 40%;
+  right: 0;
+  transform: translate(50%, -50%) rotate(180deg);
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 9px $primary-color;
+  z-index: 3;
+  transition: right 0.3s ease-in-out;
+}
+
+.flapIcon {
+  font-size: 35px;
+  color: $primary-color;
+  margin-left: 19px;
+}
+
+.drawer {
+  width: 80%;
+  flex-shrink: 0;
+}
+
+.drawerPaper {
+  width: 80%;
+  padding: 20px;
+  background-color: #f1eaeb;
+  @media (min-width: 768px) and (max-width: 991px) {
+    text-align: center;
+    width: 60%;
+  }
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
+  z-index: 1000;
 }
