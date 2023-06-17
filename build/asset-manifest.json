@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b81e7011.css",
+    "main.js": "/static/js/main.a5bef853.js",
+    "static/media/iceberg-africa.PNG": "/static/media/iceberg-africa.c6ce8aa6485e26107b37.PNG",
+    "static/media/ar.png": "/static/media/ar.90d7773990846b239fae.png",
+    "static/media/logo-desktop.png": "/static/media/logo-desktop.27a9a20cd6ec02043315.png",
+    "static/media/es.png": "/static/media/es.92c35d56abceb2895623.png",
+    "static/media/benevolea-illu(2).PNG": "/static/media/benevolea-illu(2).26897ac863138fe72c75.PNG",
+    "static/media/en.png": "/static/media/en.6041a6f5519f7ff43a2c.png",
+    "static/media/benevolea-illu.PNG": "/static/media/benevolea-illu.ba8b4d9f337aa8bb98dd.PNG",
+    "index.html": "/index.html",
+    "main.b81e7011.css.map": "/static/css/main.b81e7011.css.map",
+    "main.a5bef853.js.map": "/static/js/main.a5bef853.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b81e7011.css",
+    "static/js/main.a5bef853.js"
+  ]
+}
