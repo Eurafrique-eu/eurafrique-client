@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./build/
-          server-dir: /home/gybl3224/public_html/
+          server-dir: /home/gybl3224/dv.eurafrique.eu/thomas/
