@@ -1,5 +1,6 @@
 {
   "name": "eurafrique.eu",
+  "homepage": "./eurafrique.eu",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
