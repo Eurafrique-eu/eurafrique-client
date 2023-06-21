@@ -40,7 +40,7 @@ function App() {
           es: { translation: esTranslation },
           ar: { translation: arTranslation },
         },
-        fallbackLng: "fr", // Default language if the user's language is not available
+        fallbackLng: "fr",
         detection: {
           order: ["localStorage", "navigator"],
           caches: ["localStorage"],
