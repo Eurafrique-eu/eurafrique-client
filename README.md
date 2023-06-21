@@ -29,4 +29,12 @@ For complete documentation, visit https://react.dev/
 
 - The app is hosted on a cpanel at o2switch.
 - To access the files, go to the cpanel Dashboard, Files (Fichiers) - File Manager (Gestionnaire de Fichiers) - Repositories - eurafrique-client
-- This github repository is already linked to the cpanel and anything pushed to the main branch on this repo is automatically pushed to the cpanel as well. In case it failed, you can trigger the update directly from the cpanel by accessing: On the cpanel dashboard - Files (Fichiers) - Git Version Control - eurafrique-client - Gérer - Pull or deploy - Update from remote - Deploy Head Commit
+- This github repository is already linked to the cpanel and anything pushed to the main branch on this repo can then be pushed to the cpanel as well. You can trigger the update directly from the cpanel by accessing: On the cpanel dashboard - Files (Fichiers) - Git Version Control - eurafrique-client - Gérer - Pull or deploy - Update from remote - Deploy Head Commit
+
+# Deployment
+
+Attention: When making changes locally, before pushing, you must run again and each time
+
+### `npm run build`
+
+Another important point: running this will automatically remove the htaccess file contained in the build folder, but YOU MUST restore it in the build folder before pushing to github or deployment won't work.
