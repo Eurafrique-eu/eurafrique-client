@@ -38,3 +38,7 @@ Attention: When making changes locally, before pushing, you must run again and e
 ### `npm run build`
 
 Another important point: running this will automatically remove the htaccess file contained in the build folder, but YOU MUST restore it in the build folder before pushing to github or deployment won't work.
+
+## Troubleshooting the deployment
+
+- Getting an error 403 after deployment? Check the permissions of every folder in the file manager. Folder must be on 755, files on 644. Check all of them, and start with the parents folders, they usually cause the issue.
