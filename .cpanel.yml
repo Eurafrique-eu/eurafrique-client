@@ -3,5 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/gybl3224/repositories/eurafrique-client # Replace with your cPanel username and the path to your app's deployment directory
     - /bin/cp -R build/* $DEPLOYPATH # Copy all files to the deployment directory
+    - /bin/cp .htaccess $DEPLOYPATH # Copy .htaccess file to the deployment directory
     - /usr/bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 {} \; # Set directory permissions
     - /usr/bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} \; # Set file permissions
