@@ -22,6 +22,9 @@ import GMTV from "./pages/GMTV/GMTV";
 import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
 import NotFoundPage from "./pages/NotFound/NotFound";
+import LoginPage from "./pages/auth/LoginPage/LoginPage";
+import PasswordChangePage from "./pages/auth/PasswordChangePage/PasswordChangePage";
+import VolunteersPage from "./pages/VolunteersPage/VolunteersPage";
 
 function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
@@ -76,6 +79,9 @@ function App() {
             <Route path="/DIGEA" element={<DIGEA />} />
             <Route path="/GM-TV" element={<GMTV />} />
             <Route path="*" element={<NotFoundPage />} />
+            <Route path="/admin" element={<LoginPage />} />
+            <Route path="/password" element={<PasswordChangePage />} />
+            <Route path="/bénévoles" element={<VolunteersPage />} />
           </Routes>
         </div>
         <Footer />

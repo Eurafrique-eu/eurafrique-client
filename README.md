@@ -37,8 +37,16 @@ Attention: When making changes locally, before pushing, you must run again and e
 
 ### `npm run build`
 
-Another important point: running this will automatically remove the htaccess file contained in the build folder, but YOU MUST restore it in the build folder before pushing to github or deployment won't work.
+Another important point: running this will automatically remove the .htaccess file contained in the build folder, but YOU MUST restore it in the build folder before pushing to github or deployment won't work. Always make sure this .htaccess file is located in the same folder as the index.html file, and also in the build folder.
 
 ## Troubleshooting the deployment
 
-- Getting an error 403 after deployment? Check the permissions of every folder in the file manager. Folder must be on 755, files on 644. Check all of them, and start with the parents folders, they usually cause the issue.
+- Getting an error 403 after deployment? Check the permissions of every folder in the cpanel's file manager. Folder must be on 755, files on 644. Check all of them, and start with the parents folders, they usually cause the issue. Also make sure the domain/subdomain points to the right directory.
+
+# About the backend
+
+The server was built using BaaS (Backend as a Service), on Supabase: <br>
+You can find it at: https://supabase.com/dashboard/project/mwoossarhudekpczhrse <br><br>
+Access credentials: <br>
+Email: dev@eurafrique.eu <br>
+Password: Eurafrique.2023!
