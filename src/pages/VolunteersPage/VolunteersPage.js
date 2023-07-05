@@ -73,7 +73,7 @@ const VolunteersPage = () => {
 
   return (
     <div className="volunteers-page">
-      <h2>Add Volunteers</h2>
+      <h2>Ajouter un bénévole</h2>
       <form>
         <div className="form-group">
           <label htmlFor="codeMembre">Code Membre</label>
@@ -133,7 +133,7 @@ const VolunteersPage = () => {
             <option value="Mme">Mme</option>
           </select>
         </div>
-        <div className="form-group">
+        <div className="form-group large-field">
           <label htmlFor="nom">Nom</label>
           <input
             type="text"
@@ -144,7 +144,7 @@ const VolunteersPage = () => {
             placeholder="Dupont"
           />
         </div>
-        <div className="form-group">
+        <div className="form-group large-field">
           <label htmlFor="prenom">Prénom</label>
           <input
             type="text"
@@ -155,7 +155,7 @@ const VolunteersPage = () => {
             placeholder="Gérard"
           />
         </div>
-        <div className="form-group">
+        <div className="form-group large-field">
           <label htmlFor="telephone">Téléphone</label>
           <input
             type="text"
@@ -198,9 +198,10 @@ const VolunteersPage = () => {
         </button>
       </form>
 
+      <h2>Liste des bénévoles</h2>
+
       <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
 
-      <h2>List of Volunteers</h2>
       <table>
         <thead>
           <tr>

@@ -19,7 +19,7 @@ const PasswordChangePage = () => {
   };
 
   return (
-    <div className="password-change-page">
+    <div className="password-change-page page-content">
       <h2>Change Password</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
